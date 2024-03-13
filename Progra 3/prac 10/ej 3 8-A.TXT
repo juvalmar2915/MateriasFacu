@@ -1,0 +1,7 @@
+a)Es util para grafos con pocos vertices y/o densos (mucha conexion de vertices) mientras que la lista de adyacencias la usaria para un grafo poco denso y con muchos vertices.
+Esto es porque la matriz de adyacencias ocuparia mucho espacio si se trata de un grafo con muchos vertices (O(V^2)), mientras que para una lista no siendo muy denso ya que
+es lento el acceso a las adyacencias.
+b) Al tratarse de grafos densos se utilizan matriz de adyacencias por lo que el orden de ejecucion sera V^2. Mientras que en un grafo disperso se usa una lista de adyacencias
+por lo que el orden de ejecucion sera (|V|+|E|)
+c) la diagonal que empieza en la pos 0,0 va a contener todo 0 ya que no hay bucles mientras que el resto de valores va a ser (x,y)=(y,x) de esta forma generandose como un
+espejo dividido por dicha diagonal

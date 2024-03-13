@@ -1,0 +1,14 @@
+
+//ej 6.
+import java.util.Scanner;
+public class Temperatura {
+        public static double CalcularCelsius(double enFarenheit) {
+                return ((enFarenheit-32)*5/9);
+        }
+        public static void main (String args[]) {
+                Scanner in= new Scanner(System.in);
+                double temp=in.nextDouble();
+                System.out.println(CalcularCelsius(temp));
+                in.close();
+        }
+}

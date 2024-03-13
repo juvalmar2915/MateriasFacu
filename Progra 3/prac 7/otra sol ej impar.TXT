@@ -1,0 +1,23 @@
+public int cantHijosImpares(ArbolGeneral<Character> arbol) {
+                // escriba su solucion a partir de aquÃ­
+                if (arbol.esHoja()) {
+                        return 0;
+                }
+                else {
+                        ListaGenerica<ArbolGeneral<Character>> lista = arbol.getHijos();
+                        lista.comenzar();
+                        int cantHijos = 0;
+                        int misHijos =0;
+                        int cant =0;
+                        while (!lista.fin()) {
+                                cantHijos++;
+                                misHijos = cantHijosImpares (lista.proximo());
+                                cant = cant+misHijos;
+                        }
+                        if (cantHijos % 2 == 1) {
+                                cant++;
+                        }
+                        return cant;
+           }
+                // fin del cÃ³digo de su soluciÃ³n
+        }

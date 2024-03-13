@@ -1,0 +1,2 @@
+b. i. step over ejecuta la linea que sigue
+iii. arrAlumnos.length cannot be resolved to a variable

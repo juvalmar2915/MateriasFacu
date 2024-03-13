@@ -1,0 +1,21 @@
+Yo:
+¿En que trabaje?
+Finalice con la parte de ver el perfil e intente hacer algo sobre editar datos
+¿Que problemas tuve?
+En la parte de editar datos me tira un error con respecto al patch
+¿En que voy a trabajar hoy?
+Voy a buscar mas acerca de como funciona el form_for ya que supongo que el problema tiene que ver con algo del boton submit
+Gabriel:
+¿En que trabajo?
+Casi finaliza con el apartado de registrar, iniciar y cerrar sesion sesion de un usuario aunque le queda la parte de la clave de 4 digitos
+¿Que problemas tuvo?
+De momento ninguno
+¿En que va a trabajar hoy?
+Va a intentar trabajar con la clave de 4 digitos
+Guido:
+¿En que trabajo?
+Finalizo con ver informacion de turnos
+¿Que problemas tuvo?
+Le anduvo mal el wifi por lo que no pudo inestigar sobre la gema para generar comprobante
+¿En que va a trabajar hoy?
+Va a ver si puede realizar el apartado de generar comprobante

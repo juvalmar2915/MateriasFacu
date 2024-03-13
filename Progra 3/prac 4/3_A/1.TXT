@@ -1,0 +1,3 @@
+a. porque existen 2 tipos de listas y ambas realizan al ser listas realizan lo mismo pero de maneras distintas y dichas listas estan obligadas a definirlos.
+b. no ya que los metodos abstractos no tienen comportamiento
+c. agregar al principio tiene las mismas operaciones que agregar al final mientras que agregar en el medio consume muchas mas operaciones

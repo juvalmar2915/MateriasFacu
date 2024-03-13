@@ -1,0 +1,19 @@
+Para cada altura, sólo existe un único arbol binario lleno, de modo, que conoceré de antemano la cantidad de nodos que tendrá (2^(h+1)-1)
+
+Profundidad = nivel
+En el nivel N tendré 2^N nodos
+
+AB completo = AB lleno + nodos de izq a der
+Su cantidad de nodos está limitado entre 2^h  y la expresión 2^(h+1) - 1. Ej: h = 4 entre 16 y 31
+
+Recorridos binarios:
+Preorden: first root, then left and right son
+postorden: first left son, then right son and root
+inorden: first left son, then root and right son
+por niveles
+
+Estrategias de resolución inversa:
+    En preorden, el primero es la raíz
+    En postorden, el último es la raíz
+    Inorden me permite saber si los nodos hijos están ubicados a la izquierda o a la derecha
+

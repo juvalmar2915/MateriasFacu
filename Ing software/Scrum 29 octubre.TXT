@@ -1,0 +1,21 @@
+Yo:
+¿En que trabaje?
+Estuve revisando la ultima clase de rails subida para poder saber como se realizaban los form
+¿Que problemas tuve?
+De momento ninguno ya que no codifique nada
+¿En que voy a trabajar hoy?
+Voy a ver si comienzo a codificar la parte de ver mi perfil
+Gabriel:
+¿En que trabajo?
+Se estuvo informando sobre la gema devise para poder realizar el registro
+¿Que problemas tuvo?
+Ya que no codifico nada de momento ninguno
+¿En que va a trabajar hoy?
+Va a programar el apartado del registro de un usuario
+Guido:
+¿En que trabajo?
+Trabajo un poco en la interfaz visual del sistema
+¿Que problemas tuvo?
+No pudo trabajar sobre ninguna historia porque rendia un parcial
+¿En que va a trabajar hoy?
+Va a revisar el apartado de ver informacion de turnos

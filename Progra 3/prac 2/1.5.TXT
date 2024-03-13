@@ -1,0 +1,2 @@
+1. en la definicion de los metodos debo poner la palabra static
+2. en la invocacion debo llamar a la clase iteracionAB seguido de un punto seguido a su vez del metodo que quiero llamar

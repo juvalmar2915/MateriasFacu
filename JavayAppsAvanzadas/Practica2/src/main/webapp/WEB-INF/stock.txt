@@ -1,0 +1,10 @@
+Chocolatines,1.25
+Chupetines,0.90
+Caramelos,0.10
+Chicles,0.05
+Pastillas,1
+Gomitas,1.10
+Mentitas,2.50
+Bombom,3.12
+Turron,0.85
+Mielcita,0.20

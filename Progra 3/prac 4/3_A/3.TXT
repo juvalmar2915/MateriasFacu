@@ -1,0 +1,2 @@
+se recorrieron la cantidad de n elementos de la lista receptora del mensaje.
+La sumatoria de m-cantidad dos veces (una para encontrar la posicion y otra para agregarlo en esa posicion) siendo cantidad la cantidad de elementos que faltan para llegar a nil  por cada n elemento que se encuentre en la lista elementos para generar la lista resultante

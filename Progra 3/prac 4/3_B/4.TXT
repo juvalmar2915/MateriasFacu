@@ -1,0 +1,1 @@
+se utiliza la pila ya que cuando la cadena va encuentrando parentesis estos se van apilando y despues se verifican si estan de manera armoniosa

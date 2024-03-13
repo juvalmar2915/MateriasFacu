@@ -1,0 +1,17 @@
+<p>eventos works!</p>
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Lugar</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let evento of eventos">
+        <td>{{evento.nombre}}</td>
+        <td>{{evento.lugar}}</td>
+        <td>{{evento.fecha  | date:"dd/MM/yy"}}</td>
+    </tr>
+    </tbody>
+</table>

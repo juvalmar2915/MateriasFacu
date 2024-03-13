@@ -1,0 +1,5 @@
+a) la diferencia es que los predecesores se pueden comunicar con los ancestros
+b) i. Grafo no dirigido
+ii. Grafo Dirigido
+iii. Grafo no dirigido
+iv. Grafo dirigido

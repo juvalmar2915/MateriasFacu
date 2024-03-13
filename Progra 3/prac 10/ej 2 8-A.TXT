@@ -1,0 +1,7 @@
+a) la cantidad maxima de aristas de un grafo no dirigido es de n(n-1)/2 . esto se da ya que cada vertice esta asociado con n-1 vertices a traves de n-1 aristas a traves de
+la sumatoria de 1 hasta n-1 de n-1
+i. n-1 ya que conectando un vertice con sus restantes(n-1) se puede llega a recorrer todo el grafo
+ii. la cantidad maxima para que sea aciclico tendria que ser n(n-1)/2
+iii. en caso de conexo y aciclico seria n-1
+iv. el minimo seria igual al maximo ya que todo tendria que estar conectado con todo y el resultado seria n(n-1)/2
+b) maximo es n*(n-1) ya que cada vertice le apunta al resto de vertices entonces cada uno tiene n-1 conexiones. Si fuera el minimo este seria n-1

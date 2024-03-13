@@ -1,0 +1,1 @@
+a) habria que cambiar la implementacion de los metodos conectar y desconectar

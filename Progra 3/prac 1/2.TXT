@@ -1,0 +1,4 @@
+a. puedo abrir: debug git java(default), java browsing,java type hierarchy, planning, resource, team synchronizing, xml
+b. en la perspectiva java se puede ver package explorer, problems, javadoc, declaration, outline y task list
+c. v. te deja filtrar el metodo/ variable de una clase que se busca
+vi. te deja buscar una clase y abrirla

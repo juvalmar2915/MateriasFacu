@@ -1,0 +1,21 @@
+Yo:
+¿En que trabaje?
+Finalice con la historia de ver informacion de vacuna aplicada
+¿Que problemas tuve?
+Ninguno
+¿En que voy a trabajar hoy?
+Voy a juntar todos los archivos y organizarme para la demo de mañana
+Gabriel:
+¿En que trabajo?
+Termino con todas las historias de usuario agregando la clave de 4 digitos
+¿Que problemas tuvo?
+Ninguno
+¿En que va a trabajar hoy?
+En nada
+Guido:
+¿En que trabajo?
+Finalizo con la parte de solicitar turnos
+¿Que problemas tuvo?
+No tuvo ningun problema
+¿En que va a trabajar hoy?
+En nada

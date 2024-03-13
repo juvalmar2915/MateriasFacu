@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\valen\OneDrive\Escritorio\Progra 3\prac 2\.metadata\.plugins\org.eclipse.jdt.core
+3422053143.index

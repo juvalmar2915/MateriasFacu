@@ -1,0 +1,13 @@
+
+public class IteradorAB {
+
+	public static void main(String[] args) {
+		int num1=2;
+		int num2=7;
+		iteracionConFor(num1,num2);
+	}
+	public static void iteracionConFor(int a, int b) {
+		for (int i=a;i<b;i++)
+			System.out.println(i);
+	}
+}

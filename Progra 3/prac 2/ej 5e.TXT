@@ -1,0 +1,12 @@
+//ej 5e.
+public class Bienvenida {
+        public static String darDatos (String nombre, String apellido) {
+                return (nombre+" "+apellido);
+        }
+        public static void main(String[] args) {        
+                String nombre=null;
+                String apellido=null;
+                String datos=darDatos(nombre,apellido);
+                System.out.println("Hola "+datos);
+        }
+}

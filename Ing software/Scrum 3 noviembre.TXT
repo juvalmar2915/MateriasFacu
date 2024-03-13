@@ -1,0 +1,21 @@
+Yo:
+¿En que trabaje?
+Finalice con la parte de editar datos personales
+¿Que problemas tuve?
+Ninguno
+¿En que voy a trabajar hoy?
+Realizar la historia de informacion de vacuna aplicada
+Gabriel:
+¿En que trabajo?
+No pudo trabajar
+¿Que problemas tuvo?
+Tuvo que ponerse al dia con las otras materias del semestre por lo que no estuvo solucionando nada
+¿En que va a trabajar hoy?
+Va a intentar trabajar con la clave de 4 digitos
+Guido:
+¿En que trabajo?
+Finalizo con el apartado de generar comprobante
+¿Que problemas tuvo?
+No tuvo ningun problema
+¿En que va a trabajar hoy?
+Va a realizar la historia de solicitar turnos

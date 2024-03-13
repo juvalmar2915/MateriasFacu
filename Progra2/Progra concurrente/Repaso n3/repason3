@@ -1,0 +1,149 @@
+programa repaso2
+procesos
+  proceso BuscarF
+  variables
+    Ca:numero
+    Av:numero
+  comenzar
+    BloquearEsquina(15,15)
+    Ca:=PosCa
+    Av:=PosAv
+    Pos(15,15)
+    si HayFlorEnLaEsquina
+      tomarFlor
+    Pos(Av,Ca)
+    LiberarEsquina(15,15)
+    si HayFlorEnLaBolsa
+      depositarFlor
+  fin
+  proceso BuscarP
+  variables
+    Ca:numero
+    Av:numero
+  comenzar
+    BloquearEsquina(15,15)
+    Ca:=PosCa
+    Av:=PosAv
+    Pos(15,15)
+    si HayPapelEnLaEsquina
+      tomarPapel
+    Pos(Av,Ca)
+    LiberarEsquina(15,15)
+    si HayPapelEnLaBolsa
+      depositarPapel
+  fin
+areas
+  areaI1 : AreaP(50,50,50,50)
+  areaI2 : AreaP(51,51,51,51)
+  areaI3 : AreaP(52,52,52,52)
+  areaI4 : AreaP(53,53,53,53)
+  areaE1 : AreaP(5,4,8,15)
+  areaE2 : AreaP(11,4,14,15)
+  areaJefe : AreaP(1,1,1,1)
+  areaC : AreaPC(15,15,15,15)
+robots
+  robot tipo1
+  variables
+    Ca:numero
+    equipo:numero
+    Av:numero
+  comenzar
+    RecibirMensaje(equipo,robotjefe)
+    RecibirMensaje(Av, robotjefe)
+    RecibirMensaje(Ca, robotjefe)
+    BloquearEsquina(Av,Ca)
+    Pos(Av,Ca)
+    BuscarF
+    derecha
+    mover
+    LiberarEsquina(Av,Ca)
+    repetir 2
+      BuscarF
+      mover
+    BuscarF
+    EnviarMensaje(equipo,robotjefe)
+  fin
+  robot tipo2
+  variables
+    Av:numero
+    Ca:numero
+    equipo:numero
+  comenzar
+    RecibirMensaje(equipo,robotjefe)
+    RecibirMensaje(Av, robotjefe)
+    RecibirMensaje(Ca, robotjefe)
+    BloquearEsquina(Av,Ca)
+    Pos(Av,Ca)
+    BuscarP
+    mover
+    LiberarEsquina(Av,Ca)
+    repetir 10
+      BuscarP
+      mover
+    BuscarP
+    EnviarMensaje(equipo,robotjefe)
+    
+  fin 
+  robot tipo3
+  variables
+    termino1:numero
+    termino2:numero
+    termino3:numero
+    termino4:numero
+  comenzar
+    EnviarMensaje(1, robot1)
+    EnviarMensaje(1, robot2)
+    EnviarMensaje(2, robot3)
+    EnviarMensaje(2, robot4)
+    EnviarMensaje(5, robot1)
+    EnviarMensaje(4, robot1)
+    EnviarMensaje(5, robot2)
+    EnviarMensaje(4, robot2)
+    EnviarMensaje(11, robot3)
+    EnviarMensaje(4, robot3)
+    EnviarMensaje(11, robot4)
+    EnviarMensaje(4, robot4)
+    RecibirMensaje(termino1,*)
+    RecibirMensaje(termino2,*)
+    RecibirMensaje(termino3,*)
+    si (termino1=1 & termino2=1)
+      Informar(1)
+    sino
+      si (termino1=2 & termino2=2)
+        Informar(2)
+      sino
+        si (termino3=1)
+          Informar(1)
+        sino
+          si (termino3=2)
+            Informar(2)
+    RecibirMensaje(termino3,*)
+        
+  fin
+variables
+  robot1: tipo1
+  robot2: tipo2
+  robot3: tipo1
+  robot4: tipo2
+  robotjefe: tipo3
+comenzar
+  AsignarArea(robot1, areaE1)
+  AsignarArea(robot2, areaE1)
+  AsignarArea(robot3, areaE2)
+  AsignarArea(robot4, areaE2)
+  AsignarArea(robot1, areaI1)
+  AsignarArea(robot2, areaI2)
+  AsignarArea(robot3, areaI3)
+  AsignarArea(robot4, areaI4)
+  AsignarArea(robot1, areaC)
+  AsignarArea(robot2, areaC)
+  AsignarArea(robot3, areaC)
+  AsignarArea(robot4, areaC)
+  AsignarArea(robotjefe, areaJefe)
+  Iniciar(robot1,50,50)
+  Iniciar(robot2,51,51)
+  Iniciar(robot3,52,52)
+  Iniciar(robot4,53,53)
+  Iniciar(robotjefe,1,1)
+fin
+

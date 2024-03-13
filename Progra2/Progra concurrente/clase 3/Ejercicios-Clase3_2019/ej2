@@ -1,0 +1,50 @@
+programa ej2clase3
+areas
+  areaR1: AreaP(9,9,9,9)
+  areaR2: AreaP(11,9,11,9)
+  areaR3: AreaP(9,11,9,11)
+  areaR4: AreaP(11,11,11,11)
+  areaC1: AreaC(10,10,10,10)
+robots
+  robot tipo1
+  variables
+    Cp:numero
+    ca:numero
+    av:numero
+    haypapel:boolean
+    papel:numero
+  comenzar
+    ca:=PosCa
+    av:=PosAv
+    papel:=0
+    haypapel:= V
+    mientras haypapel
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      si HayPapelEnLaEsquina
+        tomarPapel
+        papel:=papel+1
+      haypapel:=HayPapelEnLaEsquina
+      Pos(av,ca) 
+      LiberarEsquina(10,10) 
+    Informar(papel) 
+  fin 
+variables 
+  robot1:tipo1 
+  robot2:tipo1 
+  robot3:tipo1
+  robot4:tipo1
+comenzar
+  AsignarArea(robot1,areaR1)
+  AsignarArea(robot2,areaR2)
+  AsignarArea(robot3,areaR3)
+  AsignarArea(robot4,areaR4)
+  AsignarArea(robot1,areaC1)
+  AsignarArea(robot2,areaC1)
+  AsignarArea(robot3,areaC1)
+  AsignarArea(robot4,areaC1)
+  Iniciar(robot1,9,9)
+  Iniciar(robot2,11,9)
+  Iniciar(robot3,9,11)
+  Iniciar(robot4,11,11)
+fin

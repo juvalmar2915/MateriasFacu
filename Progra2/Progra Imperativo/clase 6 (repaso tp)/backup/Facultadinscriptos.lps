@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="3">
+      <Unit0>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <TopLine Value="113"/>
+        <CursorPos X="57" Y="131"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="..\..\Alumnos.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="41"/>
+        <CursorPos X="14" Y="125"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="tp_compras.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="202"/>
+        <CursorPos X="52" Y="236"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit2>
+    </Units>
+    <JumpHistory Count="15" HistoryIndex="14">
+      <Position1>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="36" Column="11" TopLine="4"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="15" Column="23"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="78" Column="22" TopLine="55"/>
+      </Position3>
+      <Position4>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="30" Column="19" TopLine="13"/>
+      </Position4>
+      <Position5>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="62" Column="43" TopLine="40"/>
+      </Position5>
+      <Position6>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="63" Column="32" TopLine="40"/>
+      </Position6>
+      <Position7>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="78" Column="10" TopLine="56"/>
+      </Position7>
+      <Position8>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="129" Column="14" TopLine="96"/>
+      </Position8>
+      <Position9>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="96" Column="8" TopLine="78"/>
+      </Position9>
+      <Position10>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="98" Column="49" TopLine="79"/>
+      </Position10>
+      <Position11>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="92" Column="10" TopLine="64"/>
+      </Position11>
+      <Position12>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="96" Column="26" TopLine="79"/>
+      </Position12>
+      <Position13>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="92" Column="13" TopLine="73"/>
+      </Position13>
+      <Position14>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="96" Column="9" TopLine="79"/>
+      </Position14>
+      <Position15>
+        <Filename Value="Facultadinscriptos.lpr"/>
+        <Caret Line="86" Column="3" TopLine="76"/>
+      </Position15>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

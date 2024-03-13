@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Triangulo
+comment1.params=
+comment1.target=java.lang.String\ getCl()
+comment10.params=color
+comment10.target=void\ setCr(java.lang.String)
+comment11.params=
+comment11.target=double\ calcularArea()
+comment12.params=
+comment12.target=double\ calcularPerimetro()
+comment2.params=
+comment2.target=java.lang.String\ getCr()
+comment3.params=
+comment3.target=double\ getL1()
+comment4.params=
+comment4.target=double\ getL2()
+comment5.params=
+comment5.target=double\ getL3()
+comment6.params=x
+comment6.target=void\ setL1(double)
+comment7.params=x
+comment7.target=void\ setL2(double)
+comment8.params=x
+comment8.target=void\ setL3(double)
+comment9.params=color
+comment9.target=void\ setCl(java.lang.String)
+numComments=13

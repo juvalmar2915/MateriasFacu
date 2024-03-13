@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="encomiendas"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="37"/>
+        <CursorPos X="8" Y="61"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <Caret Line="59" Column="17" TopLine="33"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <Caret Line="50" Column="4" TopLine="33"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <Caret Line="54" Column="21" TopLine="27"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <Caret Line="59" Column="28" TopLine="42"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ProgramaEncomiendas.pas"/>
+        <Caret Line="56" Column="12" TopLine="42"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

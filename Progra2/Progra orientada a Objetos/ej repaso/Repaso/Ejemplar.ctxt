@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=Ejemplar
+comment1.params=codi\ cantpags\ resumen\ anopublicacion\ responsable
+comment1.target=Ejemplar(int,\ int,\ java.lang.String,\ int,\ Responsable)
+comment10.params=
+comment10.target=int\ getAnopublicacion()
+comment11.params=
+comment11.target=java.lang.String\ getNombreResp()
+comment12.params=
+comment12.target=java.lang.String\ toString()
+comment2.params=
+comment2.target=Ejemplar()
+comment3.params=codi
+comment3.target=void\ setCodi(int)
+comment4.params=cantpags
+comment4.target=void\ setCantpags(int)
+comment5.params=resumen
+comment5.target=void\ setResumen(java.lang.String)
+comment6.params=anopublicacion
+comment6.target=void\ setAnopublicacion(int)
+comment7.params=
+comment7.target=int\ getCodi()
+comment8.params=
+comment8.target=int\ getCantpags()
+comment9.params=
+comment9.target=java.lang.String\ getResumen()
+numComments=13

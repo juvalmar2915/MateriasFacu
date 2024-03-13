@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Libro
+comment1.params=codi\ cantpags\ resumen\ anopublicacion\ responsable\ titulo\ cantcaps\ esbolsillo
+comment1.target=Libro(int,\ int,\ java.lang.String,\ int,\ Responsable,\ java.lang.String,\ int,\ boolean)
+comment2.params=
+comment2.target=Libro()
+comment3.params=titulo
+comment3.target=void\ setTitulo(java.lang.String)
+comment4.params=cantcaps
+comment4.target=void\ setCantcaps(int)
+comment5.params=esbolsillo
+comment5.target=void\ setEsbolsillo(boolean)
+comment6.params=
+comment6.target=java.lang.String\ getTitulo()
+comment7.params=
+comment7.target=int\ getCantcaps()
+comment8.params=
+comment8.target=boolean\ getEsbolsillo()
+comment9.params=
+comment9.target=java.lang.String\ toString()
+numComments=10

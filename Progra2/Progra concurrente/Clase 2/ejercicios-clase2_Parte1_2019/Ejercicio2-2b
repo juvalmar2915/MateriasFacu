@@ -1,0 +1,57 @@
+programa Mensaje 
+procesos
+  proceso contarF(ES flores: numero)
+  variables
+    aux : numero
+  comenzar
+    aux := 0
+    mientras (HayFlorEnLaEsquina)
+      tomarFlor
+      aux := aux + 1
+    repetir aux
+      depositarFlor
+    flores := flores + aux
+  fin
+areas
+  ciudad1 : AreaP(2,2,4,6)
+  ciudad2 : AreaP(6,2,8,8)
+robots 
+  robot tipo1
+  variables
+    flores : numero
+  comenzar
+    repetir 2
+      repetir 4
+        contarF(flores)
+        mover
+      derecha
+      repetir 2
+        contarF(flores)
+        mover
+      derecha
+    Informar(flores)
+  fin
+  robot tipo2
+  variables
+    flores : numero
+  comenzar
+    repetir 2
+      repetir 6
+        contarF(flores)
+        mover
+      derecha
+      repetir 2
+        contarF(flores)
+        mover
+      derecha
+    Informar(flores)
+  fin
+variables 
+  robot1: tipo1
+  robot2: tipo2
+comenzar 
+  AsignarArea(robot1,ciudad1)
+  AsignarArea(robot2,ciudad2)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2, 6, 2)
+fin 

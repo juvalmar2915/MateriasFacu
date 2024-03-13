@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Cuadrado
+comment1.params=l1\ nuevoCR\ nuevoCL\ unPunto
+comment1.target=Cuadrado(double,\ java.lang.String,\ java.lang.String,\ Punto)
+comment2.params=
+comment2.target=double\ getLado1()
+comment3.params=l1
+comment3.target=void\ setLado1(double)
+comment4.params=
+comment4.target=double\ calcularArea()
+comment5.params=
+comment5.target=double\ calcularPerimetro()
+comment6.params=
+comment6.target=java.lang.String\ dibujar()
+numComments=7

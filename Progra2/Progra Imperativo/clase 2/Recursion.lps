@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="7">
+      <Unit0>
+        <Filename Value="Recursion.pas"/>
+        <IsPartOfProject Value="True"/>
+        <CursorPos X="3" Y="18"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="unit1.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <CursorPos X="48" Y="26"/>
+        <UsageCount Value="10"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="..\..\AppData\Local\Temp\Rar$DIa16196.5824\ProgramaVectorOrdenado.pas"/>
+        <UnitName Value="VectorOrdenado"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="ProgramaListas.pas"/>
+        <UnitName Value="listas"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="33"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="..\clase 3 y 4\arboles.pas"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="273"/>
+        <CursorPos X="8" Y="256"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\clase 5\ProgramaEncomiendas.pas"/>
+        <UnitName Value="encomiendas"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="53"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\clase 5\twitter.pas"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="172"/>
+        <CursorPos X="156" Y="181"/>
+        <UsageCount Value="10"/>
+        <Loaded Value="True"/>
+      </Unit6>
+    </Units>
+    <JumpHistory Count="3" HistoryIndex="2">
+      <Position1>
+        <Filename Value="Recursion.pas"/>
+        <Caret Line="6" Column="33" TopLine="3"/>
+      </Position1>
+      <Position2>
+        <Filename Value="Recursion.pas"/>
+        <Caret Line="24" Column="76" TopLine="4"/>
+      </Position2>
+      <Position3>
+        <Filename Value="Recursion.pas"/>
+        <Caret Line="25" Column="85" TopLine="5"/>
+      </Position3>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

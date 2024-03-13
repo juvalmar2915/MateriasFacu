@@ -1,0 +1,135 @@
+programa repaso2
+procesos
+  proceso buscarF (ES completo:boolean)
+  variables
+    Ca:numero
+    Av:numero
+  comenzar
+    BloquearEsquina(100,100)
+    Ca:=PosCa
+    Av:=PosAv
+    Pos(100,100)
+    si HayFlorEnLaEsquina
+      tomarFlor
+    sino
+      completo:=F
+    Pos(Av,Ca)
+    LiberarEsquina(100,100)
+    si HayFlorEnLaBolsa
+      depositarFlor
+  fin
+areas
+  areaI1 : AreaP(2,1,2,1)
+  areaI2 : AreaP(3,1,3,1)
+  areaI3 : AreaP(4,1,4,1)
+  areaR1 : AreaP(1,3,100,3)
+  areaR2 : AreaP(1,5,100,5)
+  areaR3 : AreaP(1,7,100,7)
+  areaL1 : AreaP(20,61,24,70)
+  areaL2 : AreaP(27,61,31,70)
+  areaL3 : AreaP(34,61,38,70)
+  areaJefe : AreaP(1,1,1,1)
+  areaC : AreaPC(100,100,100,100)
+robots
+  robot tipo1
+  variables
+    Ca:numero
+    Carecorro:numero
+    Av:numero
+    completo:boolean
+    quiensoy:numero
+    pasos:numero
+  comenzar
+    completo:=V
+    RecibirMensaje(quiensoy, robotjefe)
+    RecibirMensaje(Av, robotjefe)
+    RecibirMensaje(Ca, robotjefe)
+    Informar(quiensoy)
+    Informar(Av)
+    Informar(Ca)
+    Pos(Av,Ca)
+    derecha
+    si completo
+      buscarF(completo)
+    repetir 4
+      mover
+      si completo
+        buscarF(completo)
+    derecha
+    repetir 9
+      mover
+      si completo
+        buscarF(completo)   
+    EnviarMensaje(quiensoy, robotjefe)
+    EnviarMensaje(completo, robotjefe)  
+    si completo
+      RecibirMensaje(pasos, robotjefe)
+      RecibirMensaje(Carecorro, robotjefe)
+      repetir 3
+        derecha
+      Pos(1,Carecorro) 
+      repetir pasos
+        mover
+  fin 
+  robot tipo2
+  variables
+    finalizo:boolean
+    quienes:numero
+    recorre:numero
+  comenzar
+    EnviarMensaje(1, robot1)
+    EnviarMensaje(20, robot1)
+    EnviarMensaje(70, robot1)
+    EnviarMensaje(2, robot2)
+    EnviarMensaje(27, robot2)
+    EnviarMensaje(70, robot2)
+    EnviarMensaje(3, robot3)
+    EnviarMensaje(34, robot3)
+    EnviarMensaje(70, robot3)
+    repetir 3
+      RecibirMensaje(quienes, *)
+      si (quienes=1)
+        RecibirMensaje(finalizo,robot1)
+      sino
+        si (quienes=2)
+          RecibirMensaje(finalizo,robot2)
+        sino
+          RecibirMensaje(finalizo,robot3)
+      si finalizo
+        Random(recorre,1,20)
+        si (quienes=1)
+          EnviarMensaje(recorre,robot1)
+          EnviarMensaje(3,robot1)
+        sino
+          si quienes=2
+            EnviarMensaje(recorre,robot2)
+            EnviarMensaje(5,robot2)
+          sino
+            EnviarMensaje(recorre,robot3)
+            EnviarMensaje(7,robot3)
+  fin
+variables
+  robot1: tipo1
+  robot2: tipo1
+  robot3: tipo1
+  robotjefe: tipo2
+comenzar
+  AsignarArea(robot1, areaL1)
+  AsignarArea(robot2, areaL2)
+  AsignarArea(robot3, areaL3)
+  AsignarArea(robot1, areaR1)
+  AsignarArea(robot2, areaR2)
+  AsignarArea(robot3, areaR3)
+  AsignarArea(robot1, areaI1)
+  AsignarArea(robot2, areaI2)
+  AsignarArea(robot3, areaI3)
+  AsignarArea(robot1, areaC)
+  AsignarArea(robot2, areaC)
+  AsignarArea(robot3, areaC)
+  AsignarArea(robotjefe, areaJefe)
+  Iniciar(robot1,2,1)
+  Iniciar(robot2,3,1)
+  Iniciar(robot3,4,1)
+  Iniciar(robotjefe,1,1)
+fin
+

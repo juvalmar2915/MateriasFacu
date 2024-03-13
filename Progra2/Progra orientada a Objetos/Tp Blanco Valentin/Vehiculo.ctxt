@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Vehiculo
+comment1.params=anofabricacion\ importebasico\ propietario
+comment1.target=Vehiculo(int,\ double,\ Propietario)
+comment2.params=
+comment2.target=Vehiculo()
+comment3.params=importebasico
+comment3.target=void\ setImportebasico(double)
+comment4.params=anofabricacion
+comment4.target=void\ setAnofabricacion(int)
+comment5.params=
+comment5.target=double\ getImportebasico()
+comment6.params=
+comment6.target=int\ getAnofabricacion()
+comment7.params=
+comment7.target=java.lang.String\ getNombreResp()
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment9.params=
+comment9.target=double\ calcularCostos()
+numComments=10

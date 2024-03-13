@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Dibujo
+comment1.params=titulo\ autor
+comment1.target=Dibujo(java.lang.String,\ java.lang.String)
+comment10.params=
+comment10.target=java.lang.String\ mostrar()
+comment2.params=
+comment2.target=Dibujo()
+comment3.params=
+comment3.target=java.lang.String\ getTitulo()
+comment4.params=
+comment4.target=java.lang.String\ getAutor()
+comment5.params=
+comment5.target=int\ getCantFiguras()
+comment6.params=titulo
+comment6.target=void\ setTitulo(java.lang.String)
+comment7.params=autor
+comment7.target=void\ setAutor(java.lang.String)
+comment8.params=
+comment8.target=void\ AniadirFigura()
+comment9.params=max
+comment9.target=boolean\ estaLleno(int)
+numComments=11

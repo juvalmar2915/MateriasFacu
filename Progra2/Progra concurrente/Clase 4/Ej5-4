@@ -1,0 +1,107 @@
+programa ej4clase3
+areas
+  areaR1 : AreaP(15,15,30,35)
+  areaR2 : AreaP(40,40,55,60)
+  areaC1 : AreaC(10,10,10,10) 
+  areaI1 : AreaP(2,2,2,2)
+  areaI2 : AreaP(6,6,6,6)
+  areajefe : AreaP(1,1,1,1)
+robots
+  robot tipo1
+  variables
+    CF: numero
+    CA: numero
+    AV: numero
+    largo: numero
+    empezarav: numero
+    empezarca: numero
+    alto: numero
+    altoI: numero
+    TotalF:numero
+    Termine:boolean
+  comenzar
+    RecibirMensaje(empezarav,robotjefe)
+    RecibirMensaje(empezarca,robotjefe)
+    Pos(empezarav,empezarca)
+    RecibirMensaje(alto,robotjefe)
+    RecibirMensaje(largo,robotjefe)
+    altoI:=alto
+    TotalF:=0
+    repetir 4
+      CF:=0
+      repetir alto
+        mientras HayFlorEnLaEsquina
+          tomarFlor
+          CF:=CF+1
+        mover
+      derecha
+      CA:=PosCa
+      AV:=PosAv
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      repetir CF
+        depositarFlor
+      Pos(AV,CA)
+      LiberarEsquina(10,10)
+      si (alto=altoI)
+        alto:=largo
+      sino
+        alto:=altoI
+    Termine:=V
+    EnviarMensaje(Termine,robotjefe)
+      
+  fin
+  robot tipo2
+  variables
+    floresjuntadas: numero
+    termino1:boolean
+    termino2:boolean
+  comenzar
+    floresjuntadas:=0
+    BloquearEsquina(10,10)
+    Pos(10,10)
+    mientras HayFlorEnLaEsquina
+      tomarFlor
+      floresjuntadas:= floresjuntadas+1
+    Pos(1,1)
+    LiberarEsquina(10,10)
+    floresjuntadas:=0
+    EnviarMensaje(15,robot1)
+    EnviarMensaje(15,robot1)
+    EnviarMensaje(20,robot1)
+    EnviarMensaje(15,robot1)
+    EnviarMensaje(40,robot2)
+    EnviarMensaje(40,robot2)
+    EnviarMensaje(20,robot2)
+    EnviarMensaje(15,robot2)
+    RecibirMensaje(termino1,*)
+    RecibirMensaje(termino2,*)
+    si (termino1 & termino2)
+      BloquearEsquina(10,10)
+      Pos(10,10)
+      mientras HayFlorEnLaEsquina
+        tomarFlor
+        floresjuntadas:= floresjuntadas+1
+      repetir floresjuntadas
+        depositarFlor
+      Pos(1,1)
+      LiberarEsquina(10,10)
+    Informar(floresjuntadas)
+  fin
+variables
+  robot1: tipo1
+  robot2: tipo1
+  robotjefe: tipo2
+comenzar
+  AsignarArea(robot1,areaR1)
+  AsignarArea(robot2,areaR2)
+  AsignarArea(robot1,areaC1)
+  AsignarArea(robot2,areaC1)
+  AsignarArea(robot1,areaI1)
+  AsignarArea(robot2,areaI2)
+  AsignarArea(robotjefe,areajefe)
+  AsignarArea(robotjefe,areaC1)
+  Iniciar(robotjefe, 1, 1)
+  Iniciar(robot1, 2, 2)
+  Iniciar(robot2, 6, 6)
+fin

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Circulo
+comment0.text=\r\n\ @author\ vsanz\r\n
+comment1.params=nuevoRadio\ nuevoCR\ nuevoCL\ unPunto
+comment1.target=Circulo(double,\ java.lang.String,\ java.lang.String,\ Punto)
+comment1.text=A\u00D1ADIDO\ TEMA\ 4
+comment2.params=
+comment2.target=Circulo()
+comment3.params=
+comment3.target=double\ getRadio()
+comment4.params=nuevoRadio
+comment4.target=void\ setRadio(double)
+comment5.params=
+comment5.target=double\ calcularArea()
+comment6.params=
+comment6.target=double\ calcularPerimetro()
+comment7.params=
+comment7.target=java.lang.String\ dibujar()
+numComments=8

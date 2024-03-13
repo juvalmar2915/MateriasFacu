@@ -1,0 +1,19 @@
+Se nos presenta un nuevo problema. Si ejecutamos varias veces nuestro programa, la secuencia de números aleatorios se repite. Imaginemos que tenemos un programa que escribe 3 número aleatorios entre 0 y 10. Lo ejecutamos una vez y sale, por ejemplo 4, 7 y 9. Lo ejecutamos por segunda vez y vuelve a salir 4, 7 y 9. La tercera vez sale lo mismo y cuando ya nos hemos hartado de ejecutar, vuelve a salir lo mismo.
+
+El problema es que rand() "calcula" los números aleatorios. Parte de un número inicial (llamado semilla), echa unas cuentas y saca un número aleatorio. Para el segundo número, echa unas cuentas con el resultado anterior y saca un segundo número y así sucesivamente.
+
+Si volvemos a ejecutar el programa desde el principio, el número inicial (la semilla) que usa rand() es el mismo, con lo que la secuencia de números aleatorios es la misma, ya que las cuentas son las mismas.
+
+Para evitar este problema tenemos la función srand(), a la que se le pasa de parámetro un número que se utilizará como número inicial para las cuentas. A esta función sólo debemos llamarla una vez en nuestro programa.
+
+¿Qué número le ponemos a este srand()?. No podemos ponerle un número fijo, porque entonces no hemos hecho nada. No podemos ponerle un número obtenido con rand(), porque la primera vez siempre nos dará el mismo y el resultado será igual que si le ponemos un número fijo. Debemos buscar la forma de obtener un número que sea distinto en la ejecución de cada programa.
+
+Hay dos números que se utilizan habitualmente para ello:
+
+La fecha/hora del sistema. Este valor cambia si ejecutamos el programa en distinto instante de tiempo. Tendriamos que arrancar el programa dos veces en el mismo segundo para obtener la misma secuencia de números aleatorios. En C de linux esta fecha/hora se obtiene con la función time()
+srand (time(NULL));
+
+El número de proceso del programa. El primer programa que se arranca cuando se enciende el ordenador con el sistema operativo linux, tiene el número de proceso 1, el segundo el 2, el tercero el 3 y así sucesivamente. Cuando arrancamos nuestro programa, se le asignará el número que le toque, por ejemplo, el 215. Cuando lo volvamos a arrancar, se le asignará el que le toque (puede ser 216 si no hemos ejecutado nada entre medias o 345, si nos hemos entretenido con otras cosas). Después de ejecutar nuestro programa varios miles de veces, el número de proceso puede que se repita, pero ya no nos acordaremos de la secuencia que se sacó la primera vez. El número de proceso se obtiene con getpid()
+srand (getpid());
+
+A esta función sólo hay que llamarla una vez al principio de nuestro programa. Cada vez que la llamemos, estaremos reiniciando los calculos de números aleatoriosd desde el principio, con lo que se repetirá todo.

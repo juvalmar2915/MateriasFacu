@@ -1,0 +1,1 @@
+mover realiza las acciones de preguntar si coincide la pos de pacman y la de los fantasmas y verifica si se lo come o pacman pierde vida

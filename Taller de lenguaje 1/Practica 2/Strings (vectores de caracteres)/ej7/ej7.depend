@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1586289542 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 2\strings (vectores de caracteres)\ej7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

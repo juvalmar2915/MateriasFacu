@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1590366378 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+

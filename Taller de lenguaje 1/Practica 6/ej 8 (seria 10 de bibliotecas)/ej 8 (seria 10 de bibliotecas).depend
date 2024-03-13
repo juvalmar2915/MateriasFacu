@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1590453700 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 8 (seria 10 de bibliotecas)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"istack.h"
+
+1591029656 c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 8 (seria 10 de bibliotecas)\istack.h
+
+1590454157 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 8 (seria 10 de bibliotecas)\istack.c
+	<stdio.h>
+	<stdlib.h>
+	"istack.h"
+

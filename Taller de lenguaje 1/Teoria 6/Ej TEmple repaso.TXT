@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct TEmpleado {
+    char nom[20];
+    int edad;
+    struct TEmpleado * sigte;
+ };
+typedef struct TEmpleado TEmple;
+TEmple * agregar(char [], TEmple * );
+void mostrar (TEmple * );
+void Liberar(TEmple *);
+int main()
+{  TEmple *Lista=NULL;
+   char nombre[20];
+
+   printf("Ingrese nombre : ");
+   scanf("%s",nombre);
+
+   while (strcmp(nombre,"FIN")!=0) {
+       Lista =agregar(nombre, Lista);
+
+       printf("Ingrese nombre : ");
+       scanf("%s",nombre);
+   }
+   mostrar(Lista);
+   Liberar(Lista);
+   return(0);
+}
+TEmple * agregar(char n[], TEmple * L){
+   TEmple *aux;
+   aux = (TEmple *) malloc(sizeof(TEmple));
+   strcpy(aux->nom, n);
+
+   printf("Ingrese la edad : ");
+   scanf("%d",&(aux->edad));
+   aux->sigte = L;
+   return(aux);
+}
+void mostrar(TEmple *L){
+    while (L!=NULL){
+        printf("%s  -  %d \n",L->nom,L->edad);
+        L = L->sigte;
+    }
+}
+void Liberar(TEmple *L){
+   TEmple * aux;
+    while (L!=NULL){
+        aux = L;
+        L = L->sigte;
+        free(aux);
+    }
+}

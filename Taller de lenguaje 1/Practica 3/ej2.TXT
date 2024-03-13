@@ -1,0 +1,3 @@
+En ambos bloques voy a poder declarar una persona de dos formas(con el struct persona "variable" o con persona_t "variable").
+la diferencia entre ambos bloques es que en el primer persona declara una variable llamada unaPersona que va a poder utilizarse en todo el programa.
+En el segundo bloque en cambio no declara ninguna variable en el struct ya que realiza directamente el typedef struct.

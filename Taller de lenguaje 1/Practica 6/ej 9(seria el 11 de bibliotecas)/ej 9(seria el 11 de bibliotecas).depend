@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1590580546 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9(seria el 11 de bibliotecas)\diccionario.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"diccionario.h"
+
+1590579710 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9(seria el 11 de bibliotecas)\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"diccionario.h"
+
+1590466131 c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9(seria el 11 de bibliotecas)\diccionario.h
+

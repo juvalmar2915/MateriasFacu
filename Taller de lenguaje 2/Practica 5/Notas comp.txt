@@ -1,0 +1,75 @@
+Manejo de errores
+
+Excepciones (errores en ejecución)
+----------------------------------------
+Definición
+Es un evento o problema que ocurre durante la ejecución de un programa, interrumpe el flujo normal de ejecución de instrucciones. Esto sucede porque no cuenta con la información necesaria para resolver el problema en el contexto en que sucedió. Todo lo que se puede hacer es abandonar ese contexto y pasar el problema a un contexto de mayor nivel.
+----------------------------------------
+Java usa excepciones para proveer de manejo de errores a sus programas.
+Estas excepciones se lanzan es decir, se expulsan del contexto actual para ser tratadas fuera.
+----------------------------------------
+Ejemplos: 
+FileNotFound (extends IOException): archivo que no existe.
+NullPointer: acceder a atributo o método de instancia nula
+NumberFormat: parsear un string que no es un número
+ArrayIndexOutOfBounds: posición fuera de un arreglo
+----------------------------------------
+Las excepciones se clasifican en:
+	* Checked Exception o verificable en compilación: son errores que el compilador verifica y que pueden recuperarse. Se deben capturar y ser manejadas o propagar las excepciones. (Errores anticipables y recuperables, son los que saltan como warning en el IDE). Ejemplos: al intentar abrir un archivo en el File System.
+	* Runtime Exception o no verificable en compilación: son errores que se producen en el programa al igual que los checked exception pero en realidad son bugs del programa (errores de lógica o uso mal de librerias). Ejemplos: dividir por cero (Pavote no se puedeee), nullPointerException, excepciones de indexación y error de casting. Java no obliga a que sean especificadas o capturadas para su manejo. En general conviene solucionar el error que produce el bug. Ejemplos: NullPointer, ClassCast y 
+	* Error: son externos a la aplicación, relacionadas al hardware, falta de memoria, etc.
+=========================
+
+Manejadores de excepciones
+----------------------------------------
+Propagación: se escribe throws "NombreDeLaExcepción" en el método, la excepción la manejará quien lo invoca
+-- Corolario: el que lo invoca a su vez también puede usar throws si no se quiere hacer cargo, hasta llegar al main
+-- Las excepciones son clases que "heredan?/implementan?" Throwable 
+-- Si no es manejada en ningún punto bajando la pila de ejecución, se encargará el manejador por default, que es quien finaliza el programa.
+----------------------------------------
+Try/catch: Cuando tenes que tratar con métodos que producen excepciones, envolves a esos métodos en un try y con catch especificas como tratar cada excepción tirada por esos métodos.
+Una vez tratado el error, se continua con la siguiente linea posterior al try/catch.
+Throws(propagar errores): Cuando no queres tratar a la excepción podes tirarla a otro contexto para que se encarguen fuera de tratarlo.
+----------------------------------------
+Si programás mal te va a tirar NullPointerException (acceder a variables y métodos de algo no definido).
+Si se produce un error de ejecución porque se intento leer un archivo que no tenía permisos, es porque no lo trataste.
+Las RunTimeException no deben estar en un try necesariamente.
+
+Las Checked Exceptions obligatoriamente deben tratarse en un try/catch. No es el caso de las Runtime Exceptions (opcionales).
+
+Los bloques catch representan manejadores de excepciones. Esos manejadores de excepciones que podrián ser opcionales pueden ser más de uno. 
+
+En el catch se pueden poner excepciones más genéricas (es decir, superclases de una excepción concreta). Ejemplo: FileNotFoundException can be caught by IOException, y a su vez... IOException can be caught by Exception, aunque esto último ya es muy genérico (no recomendado).
+
+----------------------------------------
+Para disparar una excepción propia:
+    throw new NombreExcepcion()
+    
+no confundir con throws!!
+----------------------------------------
+Tratar en los catch lo particular primero y luego lo más general... De lo contrario tendremos errores de compilación.
+----------------------------------------
+Exception.printStackTrace() para imprimir la pila de ejecución para ver donde ocurrió la excepción. También se le puede pasar como parámetro un PrintStream para imprimirlo por consola, por ejemplo, o un archivo.
+
+Nota mental: reemplace "Exception" por la instancia que se atrape en el catch, ya que printStackTrace no es un método estático
+----------------------------------------
+finally: Es el último paso para definir un manejador de excepciones, no obligatorio, pero lo que está en su cuerpo siempre se ejecutará al terminar un try o un catch.
+--------------------------------------------
+Las instrucciones posteriores al finally sólo se ejecutarán si no se produjo excepción, o bien, si se especificó la que se produjo en el catch. En caso de RuntimeException no "atrapada", no se ejecutan las líneas sig.
+
+=========================
+Preguntas
+En el encabezado del método, luego del "throws": ¿se puede especificar más de un tipo de Exception?
+SI SE PUEDE, genial gracias!
+OJO: No se tiran dos excepciones de forma simultanea, ahí indicas que se tira una de esas N excepciones.
+Confirmado por la profe (minuto 105)
+
+Un constructor puede tener throws?
+ó solo es exclusivo para métodos?
+No es exclusivo para métodos, el throws puede estar en un constructor. 👍👍
+Ejemplo: public Constructor() throws Exception
+
+Siempre es mejor atender las excepciones de forma más especifica o más general?
+Depende el comportamiento que le definas, si el código del manejador es muy similar quizás conviene poner algo más general
+======================== 
+  

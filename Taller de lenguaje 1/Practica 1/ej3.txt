@@ -1,0 +1,5 @@
+operadores aritmeticos: suma(+) y resta(-) multiplicacion(*) division(/) modulo(%) y parentesis(evalua antes que otros)
+operadores relacionales: ==(x==y x es igual a y), != (x!=y x no es igual a y) > (x>y x es mayor que y) < (x<y x es menor que y) >= (x>=y x es mayor o igual que y) <= (x<=y x es menor o igual que y)
+operadores logicos: &&(and, si las dos condiciones se cumplen entra), || (OR, si una de las condiciones se cumple entra), ! (NOT, niega la condicion)
+operadores de asignacion: += (c+=7 c=c+7) -= (d-=4 d=d–4) *= (e*=5 e=e*5) /=(f/=3 f=f/3) %= (g%=9 g=g%9)
+operador condicional: unico operador ternario de c, su sintaxis es:  Expresión lógica ? valor1 : valor2 (Evalúa la expresión y si es verdadera devuelve valor1 sino devuelve valor2.)

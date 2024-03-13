@@ -1,0 +1,9 @@
+opcion1: recibe un arreglo y multiplica cada uno de sus componentes por 0,5
+opcion2: recibe un puntero al primer elemento de un arreglo y divide en 2 cada una de sus componentes menos la primera que se pierde el valor de dicho elemento ya que termina 
+apuntando uno mas (incrementa el puntero a traves de *datos++) la diferencia es que si quisiera seguir utilizando el arreglo en la funcion perdi la posicion al primer elemento.
+opcion3: recibe un puntero al primer elemento y en las postcondiciones del for avanza en las pos del arreglo multiplica cada uno de los elementos por 0.5
+opcion4: recibe un arreglo pero en la funcion es manipulado como un puntero y en la funcion ocurre lo mismo que la opcion 2 perdiendo el primer elemento referenciado
+opcion5: recibe un arreglo y es manipulado como un puntero dicho arreglo es incrementado dos veces dentro del for y decrementado una vez en las postcondiciones del for ocurriendo lo mismo que en el opcion2
+opcion6: recibe un arreglo y es manejado como puntero los elementos de dicho arreglo son el primer elemento multiplicado por 0.5 CANT_DATOS veces (si el primer elemento es 8 el segundo es 4 el tercero 2 y asi sucesivamente)
+opcion7: recibe un arreglo es manejado en parte como puntero y parte como arreglo, este realiza la multiplicacion de 0.5 a cada elemento del arreglo
+opcion8: mismo a opcion7 pero cambiado orden de asignacion y en este en vez de ser multiplicado por 0,5 es dividido por 2

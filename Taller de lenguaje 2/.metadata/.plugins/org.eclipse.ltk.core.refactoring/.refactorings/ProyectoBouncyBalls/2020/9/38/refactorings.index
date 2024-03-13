@@ -1,0 +1,3 @@
+1600116668368	Rename type 'Dibujo'
+1600117004001	Rename local variable 'vy'
+1600117652487	Extract method 'dibujaCirculo'

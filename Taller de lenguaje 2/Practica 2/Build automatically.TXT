@@ -1,0 +1,1 @@
+el archivo compilado se encuentra en bin, con clean limpio dicha carpeta y con build automatically seleccionado se limpia dicha carpeta y vuelve a compilarlo

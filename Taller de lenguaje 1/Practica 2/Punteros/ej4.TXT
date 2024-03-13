@@ -1,0 +1,4 @@
+a) el programa imprime los elementos del vector incrementados en 3 cada uno
+b) la variable vector se ve modificada porque el puntero realiza una suma a su contenido en 3 durante cada posicion del vector. si es correcto ya que al puntero se lo trata como un vector y se avanza realizando p++
+c) no sucede nada ya que lo que hace es incrementar en 1 el puntero para avanzar a la siguiente posicion del vector
+d) si modificamos por p+=2 avazamos 2 posiciones del vector con lo cual en la posicion 5 ya comenzamos a imprimir el contenido de las celdas de memoria seguidas al vector

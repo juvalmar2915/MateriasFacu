@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1590444495 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9\main.c
+	<stdio.h>
+	<stdlib.h>
+	"imath.h"
+
+1590441273 c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9\imath.h
+
+1590443078 source:c:\users\valen\onedrive\escritorio\taller de lenguaje 1\practica 6\ej 9\imath.c
+	<stdio.h>
+	<stdlib.h>
+

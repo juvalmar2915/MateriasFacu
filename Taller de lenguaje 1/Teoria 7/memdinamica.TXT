@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+int ** reservarMemoria(int , int);
+void Leer(int **, int, int);
+void mostrar(int ** , int , int );
+void verSumaFilas(int ** , int , int );
+void liberarMemoria(int ** , int );
+int main()
+{  int N, M;
+   int ** mat;
+   printf("Ingrese nro. filas :");
+   scanf("%d", &N);
+
+   printf("Ingrese nro. columnas :");
+   scanf("%d", &M);
+
+   mat = reservarMemoria(N,M);
+   Leer(mat, N, M);
+   mostrar(mat, N, M);
+   verSumaFilas(mat, N, M);
+   liberarMemoria(mat, N);
+
+   return(0);
+}
+
+int ** reservarMemoria(int N, int M){
+    int ** aux, i;
+
+    aux = (int **)malloc(N*sizeof(int*));
+    for (i=0; i<N; i++)
+        aux[i]= (int *)malloc(M*sizeof(int));
+
+    return(aux);
+}
+
+void liberarMemoria(int ** mat, int N){
+    int i;
+
+    for (i=0; i<N; i++) free(mat[i]);
+
+    free(mat);
+}
+void Leer(int ** matriz, int FIL, int COL){
+   int f,c;
+   for (f=0; f<FIL; f++)
+    for (c=0; c<COL; c++)
+         matriz[f][c] = COL * f + c;
+}
+
+void mostrar(int ** matriz, int FIL, int COL){
+   int f,c;
+   for (f=0; f<FIL; f++){
+    for (c=0; c<COL; c++)
+         printf("%2d  ", matriz[f][c]);
+    printf("\n");
+   }
+   printf("\n");
+}
+
+void verSumaFilas(int ** matriz, int FIL, int COL){
+   int f,c, suma;
+   for (f=0; f<FIL; f++){
+    suma = 0;
+    for (c=0; c<COL; c++)
+         suma += matriz[f][c];
+    printf("%3d \n", suma);
+   }
+}

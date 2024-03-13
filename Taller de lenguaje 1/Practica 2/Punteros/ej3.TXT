@@ -1,0 +1,4 @@
+el primer valor impreso con el ampersand indica la direccion de memoria del puntero p. 
+luego imprime la direccion de memoria a la que apunta p que esta se habia inicializado en el primer valor del arreglo
+y al final imprime el valor de la primera posicion del arreglo
+cuando incrementa en uno el puntero p ocurre que accede a la siguiente posicion del arreglo

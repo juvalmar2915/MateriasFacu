@@ -1,0 +1,8 @@
+ORG 2000H
+CMP AL, BL ; en caso de ser igual no habria que modificar nada ya que seria lo mismo asignar a c el valor de a que el de b
+JNC nomenor
+mov cl, al
+jmp fin
+nomenor: mov cl,bl
+fin: HLT
+END

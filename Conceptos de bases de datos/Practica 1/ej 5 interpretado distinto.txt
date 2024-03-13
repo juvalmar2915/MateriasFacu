@@ -1,0 +1,98 @@
+program Especies;
+Const
+  FIN = 'zzz';
+type
+  flores = record
+           num:integer;
+           alt_max:integer;
+           nom_cientifico:String[255];
+           nom_vulgar:String[255];
+           color:String[255];
+  end;
+  arc = file of flores;
+var
+  flor:arc;
+  nuevo:Text;
+  opc:Byte;
+  total_especies:integer;
+  especie_menor:integer;
+  especie_mayor:integer;
+  nombre:String;
+  nombre2:String;
+  f: flores;
+begin
+  writeLn('ESPECIES DE FLORES');
+  writeLn;
+  writeLn('0. Terminar el Programa');
+  writeLn('1. Crear un archivo');
+  writeLn('2. Abrir un archivo existente');
+  writeln('3. Reportes (tiene que pasar al menos una vez)');
+  writeln('4. Pasar a un archivo de texto');
+ Repeat
+  total_especies:= 0;
+  especie_mayor:= 0;
+  especie_menor:= 999;
+  Write('Ingrese el nro. de opcion: '); ReadLn(opc);
+  If (opc=1) or (opc=2) or (opc=3) then begin
+    writeln('Ingrese el nombre del archivo: ');
+    read(nombre);
+    assign(flor, nombre);
+  Case opc of
+       1:begin
+        rewrite(flor);
+        with f do readln(num,alt_max,nom_cientifico,nom_vulgar,color);
+        while(f.nom_cientifico <> FIN) do
+         begin
+         if( f.nom_cientifico = 'Victoria amazonica') then
+           f.nom_cientifico:= 'Victoria amazónica';
+         write(flor,f);
+         total_especies:= total_especies + 1;
+         if(especie_mayor < f.alt_max) then
+           especie_mayor:= f.alt_max;
+         if(especie_menor > f.alt_max) then
+           especie_menor:=f.alt_max;
+         with f do readln(num,alt_max,nom_cientifico,nom_vulgar,color);
+         end;
+         close(flor);
+
+       end;
+       2:begin
+        reset(flor);
+        seek(flor,filesize(flor)-1);
+         with f do readln(num,alt_max,nom_cientifico,nom_vulgar,color);
+        while(f.nom_cientifico <> FIN) do
+         begin
+         write(flor,f);
+         total_especies:= total_especies + 1;
+         if(especie_mayor < f.alt_max) then
+           especie_mayor:= f.alt_max;
+         if(especie_menor > f.alt_max) then
+           especie_menor:=f.alt_max;
+         with f do readln(num,alt_max,nom_cientifico,nom_vulgar,color);
+         end;
+        close(flor);
+       end;
+       3:begin
+         writeln('La altura maxima es de: ',especie_mayor);
+         writeln('La altura minima es de: ',especie_menor);
+         writeln('El total de especies es de: ',total_especies);
+       end;
+       4:begin
+        writeln('Ingrese el nombre del archivo binario: ');
+        read(nombre2);
+        assign(nuevo, nombre2);
+        rewrite(nuevo);
+        while(not eof(flor))do
+         begin
+         read(flor,f);
+         writeln(nuevo,f.num,' ',f.alt_max,' ',f.nom_cientifico,' ',f.nom_vulgar,' ',f.color);
+         end;
+        close(nuevo);
+        close(flor);
+       end;
+    end;
+  end;
+ until(opc=0) ;
+ readln();
+end.
+                                              

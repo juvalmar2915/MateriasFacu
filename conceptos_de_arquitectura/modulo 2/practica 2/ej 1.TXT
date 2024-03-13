@@ -1,0 +1,11 @@
+a) 16 Ciclos, 7 Instrucciones , 2,286 CPI.
+b) se generan 4 atascos por dependencia de datos (solamente de tipo raw), las instrucciones que generan estos atascos son add.d  f3, f2, f1 , s.d   f3, res1(r0) y 
+s.d   f4, res2(r0). En el caso de add.d f3, f2, f1 esta es generada ya que el dato todavia no fue cargado en f2, en el caso de s.d   f3, res1(r0) se genera porque todavia
+no se termino de ejecutar la instruccion add.d  f3, f2, f1 que escribe el dato en f3 y en el caso de s.d   f4, res2(r0) ocurre lo mismo al caso anterior pero  ya que no se
+termino de ejecutar mul.d f4, f2, f1.
+c) Los atascos estructurales se generan por conflictos por los recursos. Estos suceden cuando dos instrucciones en unidades de ejecución distintas intentan acceder a la 
+etapa memoria simultáneamente. ocurren en la instruccion s.d f3, res1(r0) ya que la misma intenta acceder a la etapa de memoria luego de la ejecucion pero la instruccion
+add.d f3, f2, f1 estaba accediendo a esta etapa. En la instruccion s.d f4, res2(r0) ocurre lo mismo al anterior atasco estructural pero con la instruccion mul.d f4, f2, f1
+d) El atasco war aparece ya que MUL.D quiere modificar F1, cuando todavia esta siendo leido por ADD.D
+e) se soluciona ya que le da tiempo de cargar f2 a la instruccion l.d antes que add.d pida el valor de este registro, el war a su vez se soluciona ya que la instruccion
+anterior ya leyo los datos cuando mul.d quiere acceder a la etapa de busqueda de datos (id) mientras que antes se retrasaba esa lectura debido al atasco raw

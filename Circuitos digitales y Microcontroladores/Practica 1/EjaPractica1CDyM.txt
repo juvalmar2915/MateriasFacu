@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdint.h>
+void sleep();
+unsigned short int sum(unsigned char);
+unsigned short int sum(unsigned char N){
+    unsigned char x;
+    unsigned short int num;
+    for (x=1;x<=N;x++){
+        num=num+x;
+    }
+    return num;
+};
+int main()
+{
+    
+    unsigned char N1=4;
+    printf("%d",sum(N1));
+
+    return 0;
+    
+    
+}

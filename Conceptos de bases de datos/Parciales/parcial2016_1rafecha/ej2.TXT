@@ -1,0 +1,75 @@
+Orden 6 min claves 6/2-1=2 max claves 5 no dice politica supongo izquierda
+alta 800
+Nodo 2: 5,i, 0(61)1(80)3(97)4(297)5(401)6
+Nodo 0: 2,h, (15)(32)
+Nodo 1: 2,h, (63)(76)
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399)
+Nodo 6: 5,h, (403)(405)(506)(800)(807)(920) //genera overflow subo nodo 800 por politica de izquierda donde el desbalanceo va a ser mayor en el hijo izquierdo
+
+Nodo 2: 5,i, 0(61)1(80)3(97)4(297)5(401)6(800)7 //genera overflow promociono nodo 297 y creo nuevo nodos uno para padre y otro interno
+Nodo 0: 2,h, (15)(32)
+Nodo 1: 2,h, (63)(76)
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399)
+Nodo 6: 3,h, (403)(405)(506)
+Nodo 7: 2,h, (807)(920)
+
+Nodo 9: 1,i 2(297)8
+Nodo 2: 5,i, 0(61)1(80)3(97)4
+Nodo 0: 2,h, (15)(32)
+Nodo 1: 2,h, (63)(76)
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399)
+Nodo 6: 3,h, (403)(405)(506)
+Nodo 7: 2,h, (807)(920)
+Nodo 8: 1,i, 5(401)6(800)7
+
+baja 61
+Nodo 9: 1,i 2(297)8
+Nodo 2: 5,i, 0(61)1(80)3(97)4 //intento eliminar 61 lo que provoca un underflow y por politica de izquierda llego a balancear por lo que hay fusion
+Nodo 0: 2,h, (15)(32)
+Nodo 1: 2,h, (63)(76)
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399)
+Nodo 6: 3,h, (403)(405)(506)
+Nodo 7: 2,h, (807)(920)
+Nodo 8: 1,i, 5(401)6(800)7
+
+Nodo 9: 1,i 2(297)8
+Nodo 2: 5,i, 0(80)3(97)4
+Nodo 0: 4,h, (15)(32)(63)(76)
+Nodo 1: 0,h, ()Nodo libre
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399)
+Nodo 6: 3,h, (403)(405)(506)
+Nodo 7: 2,h, (807)(920)
+Nodo 8: 1,i, 5(401)6(800)7
+
+baja 389
+Nodo 9: 1,i 2(297)8
+Nodo 2: 5,i, 0(80)3(97)4
+Nodo 0: 4,h, (15)(32)(63)(76)
+Nodo 1: 0,h, ()Nodo libre
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (389)(399) //provoca underflow no tiene hermano izquierdo intento balancear con el derecho
+Nodo 6: 3,h, (403)(405)(506)
+Nodo 7: 2,h, (807)(920)
+Nodo 8: 1,i, 5(401)6(800)7
+
+Nodo 9: 1,i 2(297)8
+Nodo 2: 5,i, 0(80)3(97)4
+Nodo 0: 4,h, (15)(32)(63)(76)
+Nodo 1: 0,h, ()Nodo libre
+Nodo 3: 2,h, (82)(83)
+Nodo 4: 3,h, (108)(189)(210)
+Nodo 5: 2,h, (399)(401) //provoca underflow no tiene hermano izquierdo intento balancear con el derecho bajo el 401 y subo el 403 y soluciono underflow
+Nodo 6: 3,h, (405)(506)
+Nodo 7: 2,h, (807)(920)
+Nodo 8: 1,i, 5(403)6(800)7

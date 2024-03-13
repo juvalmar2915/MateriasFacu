@@ -1,0 +1,10 @@
+a) dadd r1, r2, r0 (r1=r2+0)
+Esta instruccion iguala el valor de r1 al que tiene r2. Equivale a un mov entre dos registros en el x86
+b) daddi r3, r0, 5 (r3=0+5)
+Esta instruccion iguala el valor de r3 a 5 (valor inmediato). Equivale a un mov r3, 5 en x86
+c) dsub r4, r4, r4 (r4=r4-r4)
+Esta instruccion resta el valor de r4 a r4 guardandolo en r4. Equivale a un sub r4, r4 o un mov r4, 0 en x86
+d) daddi r5, r5, -1 (r5=r5+(-1))
+Esta instruccion suma a r5 -1 guardandolo en r5(valor inmediato). Equivale a un dec r5 o sub r5, 1 en x86
+e)  xori r6, r6 , 0xffffffffffffffff
+Esta instruccion realiza la operacion logica xor con un valor inmediato (0xffffffffffffffff). Equivale a un xor r6, 0ffffffffffffffffh

@@ -1,0 +1,1 @@
+para almacenar en la celda de memoria deberiamos hacer un mov total, al

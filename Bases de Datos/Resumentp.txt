@@ -1,0 +1,5 @@
+Naturaleza autodescriptiva: Contiene tanto la base de datos como la definicion del sistema de gestion de bases de datos (metadatos). Antes la definicion de los archivos
+(estructuras de datos) estaba en los mismos programas (aplicaciones).
+Independencia de datos: Cambio de aplicacion no modifica resto de aplicacion ya que los datos no dependen de la app.
+soporte de vistas: no todos los usuarios necesitan acceso de datos se puede ocultar informacion para ciertos usuarios. trabaja sobre la vista y no sobre la base de datos
+Soporte para compartir datos con muchos usuarios.

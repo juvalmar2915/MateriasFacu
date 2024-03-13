@@ -1,0 +1,234 @@
+.data
+color:   .byte 255, 0, 0, 0 
+CONTROL: .word32 0x10000
+DATA:    .word32 0x10008
+
+.code
+
+daddi $sp,$0,0x300
+
+lwu $a0, CONTROL($0)
+lwu $a1, DATA($0)
+
+jal ingreso
+
+halt
+
+ingreso:      daddi $sp,$sp,-8
+	      sd $ra,0($sp)
+     	      daddi $t0, $0, 8
+	      sd $t0, 0($a0)
+              ld $t1, 0($a1)
+	      slti $t2, $t1, 10
+	      beqz $t2, NO_ES
+	      dadd $a2, $0, $t1
+	      jal muestra
+NO_ES:	      ld $ra,0($sp)
+	      daddi $sp, $sp, 8
+	      jr $ra
+
+muestra:      daddi $sp,$sp,-8
+	      sd $ra,0($sp)
+
+	      slti $t2, $a2, 1
+	      beqz $t2, sig1
+	      jal prender_a
+	      jal prender_b
+	      jal prender_c
+	      jal prender_d
+	      jal prender_e
+	      jal prender_f
+  	      j fin
+
+sig1:	      slti $t2, $a2, 2
+	      beqz $t2, sig2
+	      jal prender_b
+	      jal prender_c
+	      j fin
+
+sig2:	      slti $t2, $a2, 3
+	      beqz $t2, sig3
+	      jal prender_a
+	      jal prender_b
+	      jal prender_g
+	      jal prender_e
+	      jal prender_d
+	      j fin
+
+sig3:	      slti $t2, $a2, 4
+	      beqz $t2, sig4
+	      jal prender_a
+	      jal prender_b
+	      jal prender_c
+	      jal prender_d
+	      jal prender_g
+	      j fin
+
+sig4:	      slti $t2, $a2, 5
+	      beqz $t2, sig5
+	      jal prender_f
+	      jal prender_g
+	      jal prender_b
+	      jal prender_c
+	      j fin
+
+sig5:	      slti $t2, $a2, 6
+	      beqz $t2, sig6
+	      jal prender_a
+	      jal prender_f
+	      jal prender_g
+	      jal prender_c
+	      jal prender_d
+	      j fin
+
+sig6:	      slti $t2, $a2, 7
+	      beqz $t2, sig7
+	      jal prender_a
+	      jal prender_c
+	      jal prender_d
+	      jal prender_e
+	      jal prender_f
+	      jal prender_g
+	      j fin
+
+sig7:	      slti $t2, $a2, 8
+	      beqz $t2, sig8
+	      jal prender_a
+	      jal prender_b
+	      jal prender_c
+	      j fin
+
+sig8:	      slti $t2, $a2, 9
+	      beqz $t2, sig9
+	      jal prender_a
+	      jal prender_b
+	      jal prender_c
+	      jal prender_d
+	      jal prender_e
+	      jal prender_f
+	      jal prender_g
+	      j fin
+
+sig9:	      jal prender_a
+	      jal prender_b
+	      jal prender_c
+	      jal prender_f
+	      jal prender_g
+
+
+fin:          ld $ra,0($sp)
+	      daddi $sp, $sp, 8
+	      jr $ra	
+
+
+prender_a: 	daddi $t0, $0, 2 #Coordenada X
+		daddi $t1, $0, 8 #Coordenada y - altura fija
+		daddi $t2, $0, 3
+
+loopa:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t0, $t0, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopa
+		jr $ra
+
+
+prender_b: 	daddi $t0, $0, 5 #Coordenada X - Valor fijo
+		daddi $t1, $0, 6 #Coordenada y 
+		daddi $t2, $0, 2
+
+loopb:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t1, $t1, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopb
+		jr $ra
+
+
+
+prender_c: 	daddi $t0, $0, 5 #Coordenada X - Valor fijo
+		daddi $t1, $0, 2 #Coordenada y 
+		daddi $t2, $0, 3
+
+loopc:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t1, $t1, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopc
+		jr $ra
+
+	
+prender_d: 	daddi $t0, $0, 2 #Coordenada X
+		daddi $t1, $0, 1 #Coordenada y - altura fija
+		daddi $t2, $0, 3
+
+loopd:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t0, $t0, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopd
+		jr $ra
+
+
+prender_e: 	daddi $t0, $0, 1 #Coordenada X - Valor fijo
+		daddi $t1, $0, 2 #Coordenada y 
+		daddi $t2, $0, 3
+
+loope:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t1, $t1, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loope
+		jr $ra
+
+
+prender_f: 	daddi $t0, $0, 1 #Coordenada X - Valor fijo
+		daddi $t1, $0, 6 #Coordenada y 
+		daddi $t2, $0, 2
+
+loopf:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t1, $t1, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopf
+		jr $ra
+
+
+prender_g: 	daddi $t0, $0, 2 #Coordenada X
+		daddi $t1, $0, 5 #Coordenada y - altura fija
+		daddi $t2, $0, 3
+
+loopg:		sb $t0, 5($a1) ; DATA+5 recibe el valor de coordenada X
+		sb $t1, 4($a1) ; DATA+4 recibe el valor de coordenada Y
+		lwu $t3, color(r0) ; $t3 = valor de color a pintar
+		sw $t3, 0($a1) ; DATA recibe el valor del color a pintar
+		daddi $t4, $0, 5 ; $t4 = 5 -> función 5: salida gráfica
+		daddi $t0, $t0, 1
+		sd $t4, 0($a0) ; CONTROL recibe 5 y produce el dibujo del punto
+		daddi $t2, $t2, -1
+	        bnez $t2, loopg
+		jr $ra

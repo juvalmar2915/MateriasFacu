@@ -1,0 +1,2 @@
+[1001/041742.766:ERROR:process_reader_win.cc(127)] NtOpenThread: {Acceso denegado} Un proceso ha solicitado acceso a un objeto, pero no se le han concedido esos derechos de acceso. (0xc0000022)
+[1001/041742.782:ERROR:exception_snapshot_win.cc(100)] thread ID 4652 not found in process

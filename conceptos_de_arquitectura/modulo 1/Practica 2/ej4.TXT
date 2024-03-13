@@ -1,0 +1,3 @@
+a) con referencia a int7 en el registro bx se almacena la celdas de memoria donde se debe comenzar a imprimir en pantalla y en el registro al se almacena la cantidad de caracteres a imprimir (cantidad de celdas de memoria a recorrer)
+b) en bx se almacena donde se debe almacenar el numero leido
+c)la segunda interrupcion int 7 imprime el numero leido anteriormente y en el registro cl queda almacenado el numero leido

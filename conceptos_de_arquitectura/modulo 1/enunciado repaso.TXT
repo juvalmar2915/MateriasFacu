@@ -1,0 +1,7 @@
+Realice un programa para MSX 88 que ya cuenta en memoria con un arreglo llamado TABLA con 10 elementos. 
+El programa principal utiliza dos subrutinas. 
+Una subrutina VERIFICA que comprueba si cada elemento de TABLA está comprendido entre 0 y 9. 
+El resultado de la verificación se indica en otro arreglo 
+llamado RESUL que se encuentra memoria, que posee en cada posición 00H si el elemento es un número o FFH si no lo es. 
+Otra subrutina llamada CUENTA lee el arreglo RESUL y 
+cuenta por medio de AL la cantidad de elementos que efectivamente son números.

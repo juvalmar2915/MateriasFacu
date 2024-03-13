@@ -1,0 +1,41 @@
+orden:6 cap min:6/2-1=2
+baja 80
+L2L1L3E2E1E3
+no se puede resolver con politica izquierda hay una fusion
+Nodo 2: 4,i, 0(58)1(97)4(297)5(401)6
+Nodo 0: 2,h, (16)(25)
+Nodo 1: 2,h, (60)(63)(85)(87)
+Nodo 3: 0,h, () Nodo libre
+Nodo 4: 5,h, (106)(179)(203)(215)(220)
+Nodo 5: 2,h, (334)(349)
+Nodo 6: 3,h, (419)(535)(596)
+
+alta 109
+L2L4E4E7E2
+Nodo 2: 4,i, 0(58)1(97)4(297)5(401)6
+Nodo 0: 2,h, (16)(25)
+Nodo 1: 2,h, (60)(63)(85)(87)
+Nodo 3: 0,h, () Nodo libre
+Nodo 4: 5,h, (106)(109*)(179)(203)(215)(220) overflow
+Nodo 5: 2,h, (334)(349)
+Nodo 6: 3,h, (419)(535)(596)
+
+Nodo 2: 4,i, 0(58)1(97)4(179*)7(297)5(401)6
+Nodo 0: 2,h, (16)(25)
+Nodo 1: 2,h, (60)(63)(85)(87)
+Nodo 3: 0,h, () Nodo libre
+Nodo 4: 5,h, (106)(109)
+Nodo 5: 2,h, (334)(349)
+Nodo 6: 3,h, (419)(535)(596)
+*Nodo 7: 3,h, (203)(215)(220)
+
+baja 215
+L2L7E7
+Nodo 2: 4,i, 0(58)1(97)4(179*)7(297)5(401)6
+Nodo 0: 2,h, (16)(25)
+Nodo 1: 2,h, (60)(63)(85)(87)
+Nodo 3: 0,h, () Nodo libre
+Nodo 4: 5,h, (106)(109)
+Nodo 5: 2,h, (334)(349)
+Nodo 6: 3,h, (419)(535)(596)
+Nodo 7: 3,h, (203)(220)

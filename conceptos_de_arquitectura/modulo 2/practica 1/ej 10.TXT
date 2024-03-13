@@ -1,0 +1,16 @@
+.data
+cadena: .asciiz "adbdcdedfdgdhdid" ; cadena a analizar 
+car: .asciiz "d" ; caracter buscado 
+cant: .word 0 ; cantidad de veces que se repite el caracter car en cadena. 
+.code
+dadd r1, r0, r0	
+lbu r2, car(r0)	
+dadd r3, r0, r0	
+loop:	lbu r4, cadena(r1) ; recibo caracter
+beqz r4, fin	; cadena termina en \0
+daddi r1, r1, 1	
+bne r4, r2, loop ; preguntar si coincide el caracter
+daddi r3, r3, 1	
+j loop
+fin: sd r3, cant(r0)
+halt

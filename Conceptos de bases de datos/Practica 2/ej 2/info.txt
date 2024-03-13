@@ -1,0 +1,87 @@
+Autor: Freddie Mercury
+
+Genero: Glam Rock
+
+Nombre Disco: Sheer Heart AttackCantidad vendida: 3473
+Total Genero: 3473
+Autor: Freddie Mercury
+
+Genero: Hard Rock
+
+Nombre Disco: A Day at the RacesCantidad vendida: 3719
+Genero: Hard Rock
+
+Nombre Disco: InnuendoCantidad vendida: 4405
+Genero: Hard Rock
+
+Nombre Disco: JazzCantidad vendida: 5127
+Total Genero: 13251
+Autor: Freddie Mercury
+
+Genero: Opera Rock
+
+Nombre Disco: A Night at the OperaCantidad vendida: 3775
+Total Genero: 3775
+Total Autor: 20499
+Autor: Tarja Turunen
+
+Genero: Heavy Metal
+
+Nombre Disco: Century ChildCantidad vendida: 5204
+Genero: Heavy Metal
+
+Nombre Disco: WishmasterCantidad vendida: 3451
+Total Genero: 8655
+Autor: Tarja Turunen
+
+Genero: Metal Sinfonico
+
+Nombre Disco: ImaginaerumCantidad vendida: 5144
+Genero: Metal Sinfonico
+
+Nombre Disco: OceanbornCantidad vendida: 2772
+Total Genero: 7916
+Autor: Tarja Turunen
+
+Genero: Power Metal
+
+Nombre Disco: Dark Passion PlayCantidad vendida: 3891
+Total Genero: 3891
+Total Autor: 20462
+Autor: Michael Joseph Jackson
+
+Genero: Pop
+
+Nombre Disco: BadCantidad vendida: 4017
+Genero: Pop
+
+Nombre Disco: DangerousCantidad vendida: 2552
+Genero: Pop
+
+Nombre Disco: ThrillerCantidad vendida: 2850
+Total Genero: 9419
+Total Autor: 9419
+Autor: Nick Phoenix
+
+Genero: Electronica
+
+Nombre Disco: Speed of SoundCantidad vendida: 2066
+Total Genero: 2066
+Total Autor: 2066
+Autor: Thomas J. Bergersen
+
+Genero: Epic Music
+
+Nombre Disco: ArchangelCantidad vendida: 5393
+Genero: Epic Music
+
+Nombre Disco: BattlecryCantidad vendida: 717
+Genero: Epic Music
+
+Nombre Disco: HumanityCantidad vendida: 5796
+Genero: Epic Music
+
+Nombre Disco: InvincibleCantidad vendida: 1926
+Total Genero: 13832
+Total Autor: 13832
+Total Discografica: 66278

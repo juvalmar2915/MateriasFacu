@@ -1,0 +1,11 @@
+a) Realiza una busqueda de num en la tabla, en caso de encontrar se pone en el registro r10 el valor 1. el resultado del programa sera que el registro r10 tenga el valor 1
+ya que el valor 7 se encuentra en la tabla. Queda indicado en los registros, r10
+b) La ventaja de utilizar Branch Target Buffer es que reduce la cantidad de atascos de branch taken. Trabaja prediciendo si previamente en el branch en el que se encuentra 
+ya habia saltado predice que n veces volvera a saltar hasta equivocarse y asi con el caso contrario.
+
+c)    		numero de ciclos   	CPI      RAWs Stalls     Branch Taken Stalls
+Forwarding		71		1,651		16		8
+
+Forwarding y
+Branch taken		67		1,558		16		4
+target buffer

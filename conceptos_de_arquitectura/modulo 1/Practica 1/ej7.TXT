@@ -1,0 +1,13 @@
+a)cuando se hace al llamado de una subrutina como mul se realizan:
+SP=SP – 2
+[SP]  {Dir. Retorno = instr. Sig. al CALL} Pone en la pila la dirección de retorno (donde se esta ejecutando el codigo principal)
+IP {Dir. Subrutina} asigna direccion de rutina (donde tiene que ir a ejecutar la subrutina) a ip 
+b)con la operacion Push {registro 16 bits}:
+SP = SP – 2
+[SP]  {apila Reg. 16 bits}
+con la operacion POP {registro de 16 bits}:
+{desapila Reg. 16 bits}  [SP] 
+SP = SP + 2
+c)con la instruccion RET se realizan:
+IP = [SP] Asigna dirección de retorno a IP
+SP=SP + 2 Desapila

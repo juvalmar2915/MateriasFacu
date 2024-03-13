@@ -1,0 +1,13 @@
+ORG 1000h
+cdec DB 01H
+ORG 2000h
+MOV bx, offset cdec
+MOV ah, cdec
+MOV al, 1
+sigo: INT 7
+INC ah
+MOV [bx], ah
+CMP byte ptr [bx], 00H
+JNZ sigo
+INT 0
+end

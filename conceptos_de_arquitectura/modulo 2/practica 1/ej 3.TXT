@@ -1,0 +1,35 @@
+a) -Se presentan atascos tipo raw aunque forwarding este activo ya que en otra instruccion se esta utilizando el buffer y la actual esta pidiendo su uso pero debido
+a que ya se esta utilizando, la misma no puede accederlo.
+-Branch Taken significa que se realizo un salto. Esta se produce cuando el programa predice que la siguiente instruccion no sera la del salto pero id identifica
+que dicho salto se debe realizar por lo cual se cancela la instruccion del no salto (halt en este caso) y se va a la instruccion etiqueta (loop en este caso).
+- 36 ciclos, 21 instrucciones y 1,714 ciclos por instruccion
+b) -las instrucciones que generan los atascos tipo raw son dsll r1, r1, 1 y bnez r2, loop. Los generan ya que en el primer caso aun no se almaceno el dato A en el registro r1
+solo producido durante la primera iteracion. en el caso de bnez r2, loop se genera dicho atasco ya que aun no se encuentra el dato r2 almacenado en memoria para realizar la 
+comparacion. Se produce en la etapa id con un total de 1 ciclo para la instruccion dsll r1, r1, 1 y un total de 2 ciclos para bnez r2, loop.
+-Dura 3 ciclos (contando if)(genera 1 solo ciclo) ya que se retrasa ya que esta esperando que la anterior instruccion de la orden de salto. comparando con forwarding el
+branch taken dura 2 ciclos (contando if) siendo retrasado por el atasco raw de bnez.
+- 43 ciclos, 21 instrucciones y 2,048 ciclos por instruccion
+c) .data 
+   A: .word 1 
+   B: .word 6  
+   .code  
+   ld  r2, B(r0) 
+   ld  r1, A(r0)  
+   loop: daddi  r2, r2, -1  
+   dsll  r1, r1, 1  
+   bnez  r2, loop 
+   halt
+d) .data
+   A: .word 1 
+   B: .word 6  
+   Tabla: .word 0
+   .code  
+   dadd  r3, r0, r0
+   ld  r2, B(r0) 
+   ld  r1, A(r0)  
+   loop: daddi  r2, r2, -1  
+   dsll  r1, r1, 1 
+   sd r1, Tabla(r3) 
+   daddi  r3, r3, 8
+   bnez  r2, loop 
+   halt

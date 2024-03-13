@@ -1,0 +1,35 @@
+.data
+color: .byte 0, 0, 0, 0 ; color
+CONTROL: .word32 0x10000
+DATA: .word32 0x10008
+Ingreso: .asciiz "Ingrese primero los puntos x y, seguido de el color del punto"
+.text
+lwu $s6, CONTROL(r0) ; $s6 = dirección de CONTROL
+lwu $s7, DATA(r0) ; $s7 = dirección de DATA
+
+daddi $t0, $0, 7 ; $t0 = 7 -> función 7: limpiar pantalla gráfica
+sd $t0, 0($s6) ; CONTROL recibe 7 y limpia la pantalla gráfica
+daddi $t0, $0, 4
+daddi $t1, $0, Ingreso
+sd $t1, 0($s7)
+sd $t0, 0($s6)
+daddi $t0, $0, 8
+sd $t0, 0($s6) ; lectura de color1
+lb $s0, 0($s7)
+sd $t0, 0($s6) ; lectura de color2
+lb $s1, 0($s7)
+dadd $t2, $0, $0 ; desplazamiento con respecto a "color"
+daddi $t4, $0, 4 ; cantidad de colores
+loop: sd $t0, 0($s6)
+lb $t5, 0($s7)
+sb $t5, color($t3)
+daddi $t4, $t4, -1
+daddi $t3, $t3, 1
+bnez $t4, loop
+sb $s0, 5($s7) ; DATA+5 recibe el valor de coordenada X
+sb $s1, 4($s7) ; DATA+4 recibe el valor de coordenada Y
+lwu $s2, color(r0) ; $s2 = valor de color a pintar
+sw $s2, 0($s7) ; DATA recibe el valor del color a pintar
+daddi $t0, $0, 5 ; $t0 = 5 -> función 5: salida gráfica
+sd $t0, 0($s6) ; CONTROL recibe 5 y produce el dibujo del punto
+halt

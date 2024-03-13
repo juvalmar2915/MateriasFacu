@@ -1,0 +1,23 @@
+.data
+tabla: .word 4,6,8,9
+M: .word 6
+.code
+ld $a0, M($zero)
+daddi $a1, $zero, tabla
+daddi $a2, $zero, M 
+dsub $a2, $a2, $a1
+daddi $a3, $zero, 8
+ddiv $a2, $a2, $a3
+jal mayorquem
+halt
+
+mayorquem: dadd $v0, $zero, $zero
+dadd $t0, $a1, $zero
+sigo: lbu $t1, 0($t0)
+slt $t2, $a0, $t1
+beqz $t2, nomayor
+daddi $v0, $v0, 1
+nomayor: daddi $t0, $t0, 8
+daddi $a2, $a2, -1
+bnez $a2, sigo
+jr $ra

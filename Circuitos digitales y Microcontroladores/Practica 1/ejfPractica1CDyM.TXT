@@ -1,0 +1,2 @@
+ PORTC |= (1<<PC0) | (1<<PC2) | (1<<PC3); //setea los bits 0 2 y 3 del portc, la diferencia es que solo setea los bits esos mientras que en el otro caso pone todos los bits en 0 exceptuando esos 3.
+PC2 representa el bit 2 del portC y este esta definido en el microcontrolador

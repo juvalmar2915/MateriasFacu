@@ -1,0 +1,5 @@
+Si es posible en ambos casos, para el caso de convertir un valor almacenado en el registro r1-r31 en punto flotante es necesario utilizar la instruccion mtc1 rf, fd que
+copia los 64 bits del registro entero rf al registro fd de punto flotante y la instruccion cvt.d.l fd, ff que convierte a punto flotante el valor entero copiado al registro 
+ff, y lo almacena en fd. Para el caso de transformar un punto flotante a un valor almacenado en el registro r1-r31 se utilizan la instruccion mfc1 rd, ff que copia los 64 
+bits del registro ff de punto flotante al registro rd entero y la instruccion cvt.l.d fd, ff que convierte a entero el valor en punto flotante contenido en ff, dejándolo 
+en fd.

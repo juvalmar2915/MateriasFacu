@@ -1,0 +1,9 @@
+a) la instruccion que genera atascos en el cause es sd r2, A(r0) ya que pide el valor que se encuentra en r2 para guardarlo en A pero todavia se esta ejecutando la instruccion
+ld r2, B(r0) (aun no se almaceno) 
+aparece un atasco (stall) de tipo RAW pues pide lectura despues de escritura, ya que quiere leer el valor en el registro r2 pero todavia se esta escribiendo en el.
+el promedio de ciclos por instruccion fue de 2,2.
+b) Utilizando el forwarding ya no se presentan atascos porque despues de la etapa de ejecucion, se toma ese resultado (de dicha operacion aritmetico logica) y se guarda
+en el buffer. De esta manera la siguiente instruccion ya tiene el valor disponible sin necesidad de esperar que la anterior instruccion se termine de ejecutar. La mejora sera
+que reduce los ciclos por instruccion
+el registro r1 se pintó en verde y luego sólo el registro r2, indicando que en ambos casos sus operandos fueron adelantados del acceso a memoria.
+el promedio de ciclos por instruccion fue 1,8. si se compara con el anterior se puede notar una mejora.

@@ -1,0 +1,44 @@
+.data
+tabla: .asciiz "CERO" ; OCUPAN 8 BYTES CADA PALABRA
+.asciiz "UNO" 
+.asciiz "DOS"
+.asciiz "TRES"
+.asciiz "CUATRO"
+.asciiz "CINCO"
+.asciiz "SEIS"
+.asciiz "SIETE"
+.asciiz "OCHO"
+.asciiz "NUEVE"
+CONTROL: .word32 0x10000
+DATA: .word32 0x10008
+
+.code
+lwu $s6, CONTROL($zero)
+lwu $s7, DATA($zero)
+jal ingreso
+dadd $a0, $v0, $0
+daddi $a1, $0, tabla
+jal muestra
+halt
+
+ingreso: daddi $t1, $zero, 9 ; entrada de mensaje
+daddi $t2, $zero, 10
+loop: sd $t1, 0($s6)
+ld $v0, 0($s7)
+daddi $v0, $v0, -48
+slt $t4, $v0, $t2
+beqz $t4, loop
+daddi $t0, $0, -1
+slt $t4, $t0, $v0
+beqz $t4, loop
+jr $ra
+
+muestra: daddi $t0, $0, 6
+sd $t0, 0($s6) 
+daddi $t0, $zero, 4 
+daddi $t1, $0, 8
+dmul $t1, $t1, $a0 
+dadd $a1, $a1, $t1
+sd $a1, 0($s7)
+sd $t0, 0($s6)
+jr $ra

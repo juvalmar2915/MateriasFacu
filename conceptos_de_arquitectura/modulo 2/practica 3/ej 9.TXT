@@ -1,0 +1,119 @@
+.data
+CONTROL: .word32 0x10000
+DATA: .word32 0x10008
+colores: .word32  0x00FF0000 ; Azul
+.word32 0x001400FF ; Rojo
+.word32 0x00FF00FF ; Magenta
+.word32 0x0000FF00 ; Verde
+.word32 0x00FFFF00 ; Amarillo
+.word32 0x00800080 ; Violeta
+.word32 0x00800000 ; Maroon
+.word32 0x00000000 ; Negro
+color_fondo: .word32 0x00FFFFFF ; Blanco
+.code
+lwu $s6, CONTROL($0)
+lwu $s7, DATA($0)
+daddi $t0, $0, 7
+sd $t0, 0($s6)
+daddi $s0, $0, 97
+daddi $s1, $0, 119
+daddi $s2, $0, 100
+daddi $s3, $0, 115
+lwu $s4, color_fondo($0) ; variable donde tengo el color anterior
+daddi $s5, $0, 0 ; modo desplazamiento
+loop: daddi $t1, $0, 5
+sd $t1, 0($s6)
+jal leer
+slti $t0, $v0, 49
+bnez $t0, esespacio
+slti $t0, $v0, 57 ;es num
+beqz $t0, esletra
+daddi $a0, $v0, 0
+jal num
+j loop
+esletra: bne $v0, $s0, noes_a
+jal es_a
+j loop
+noes_a: bne $v0, $s1, noes_w
+jal es_w
+j loop
+noes_w: bne $v0, $s2, noes_d
+jal es_d
+j loop
+noes_d: bne $v0, $s3, loop
+jal es_s
+j loop
+esespacio: daddi $v0, $v0, -32
+bnez $v0, loop
+bnez $s5, resto
+daddi $s5, $s5, 1
+j loop
+resto: daddi $s5, $s5, -1
+j loop
+
+leer: daddi $t2, $0, 9
+ld $t0, 0($s7)
+sd $t2, 0($s6)
+lb $v0, 0($s7)
+sd $t0, 0($s7)
+jr $ra
+
+num: daddi $a0, $a0, -49 ;vamos en numero del 0 al 7 y no del 1 al 8
+daddi $t0, $0, 8
+dmul $a0, $a0, $t0
+lwu $v0, colores($a0)
+sw $v0, 0($s7)
+jr $ra
+
+es_a: daddi $t1, $0, 5
+lb $t0, 5($s7)
+beqz $t0, fin1
+bnez $s5, solomuevo1
+lw $t3, 0($s7)
+sw $s4, 0($s7)
+sd $t1, 0($s6)
+sw $t3, 0($s7)
+solomuevo1: daddi $t0, $t0, -1
+sb $t0, 5($s7)
+sd $t1, 0($s6)
+fin1: jr $ra
+
+es_w: lb $t0, 4($s7)
+daddi $t4, $t0, -49
+beqz $t4, fin2
+bnez $s5, solomuevo2
+lw $t3, 0($s7)
+sw $s4, 0($s7)
+sd $t1, 0($s6)
+sw $t3, 0($s7)
+solomuevo2: daddi $t0, $t0, 1
+sb $t0, 4($s7)
+sd $t1, 0($s6)
+fin2: jr $ra
+
+es_d: daddi $t1, $0, 5
+lb $t0, 5($s7)
+daddi $t4, $t0, -49
+beqz $t4, fin3
+bnez $s5, solomuevo3
+lw $t3, 0($s7)
+sw $s4, 0($s7)
+sd $t1, 0($s6)
+sw $t3, 0($s7)
+solomuevo3: daddi $t0, $t0, 1
+sb $t0, 5($s7)
+sd $t1, 0($s6)
+fin3: jr $ra
+
+es_s: daddi $t1, $0, 5
+lb $t0, 4($s7)
+beqz $t0, fin4
+bnez $s5, solomuevo4
+lw $t3, 0($s7)
+sw $s4, 0($s7)
+sd $t1, 0($s6)
+sw $t3, 0($s7)
+solomuevo4: daddi $t0, $t0, -1
+sb $t0, 4($s7)
+sd $t1, 0($s6)
+fin4: jr $ra

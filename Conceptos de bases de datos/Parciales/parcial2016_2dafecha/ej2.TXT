@@ -1,0 +1,53 @@
+orden 4 max hijos 3 min hijos 4/2-1=1
+alta 46
+Nodo 0: 1,i, 1(73)2
+Nodo 1: 2,i 3(44)4(58)5
+Nodo 2: 1,i, 6(90)7
+Nodo 3: 2,h, (20)(29)->4
+Nodo 4: 3,h, (44)(45)(46)(47)->5 Overflow
+Nodo 5: 2,h, (58)(70)->6
+Nodo 6: 1,h, (73)->7
+Nodo 7: 1,h, (90)->-1
+
+Nodo 0: 1,i, 1(73)2
+Nodo 1: 2,i 3(44)4(46)8(58)5
+Nodo 2: 1,i, 6(90)7
+Nodo 3: 2,h, (20)(29)->4
+Nodo 4: 3,h, (44)(45)->8
+Nodo 5: 2,h, (58)(70)->6
+Nodo 6: 1,h, (73)->7
+Nodo 7: 1,h, (90)->-1
+Nodo 8: 1,h, (47)->5
+
+baja 73
+Nodo 0: 1,i, 1(73)2
+Nodo 1: 2,i 3(44)4(46)8(58)5
+Nodo 2: 1,i, 6(90)7
+Nodo 3: 2,h, (20)(29)->4
+Nodo 4: 3,h, (44)(45)->8
+Nodo 5: 2,h, (58)(70)->6
+Nodo 6: 1,h, (73)->7 //underflow (no tiene hijo izquierdo intento balancear con el derecho y al no poderse se produce una fusion)
+Nodo 7: 1,h, (90)->-1
+Nodo 8: 1,h, (47)->5
+
+Nodo 0: 1,i, 1(73)2
+Nodo 1: 2,i 3(44)4(46)8
+Nodo 2: 1,i, 5(90)6
+Nodo 3: 2,h, (20)(29)->4
+Nodo 4: 3,h, (44)(45)->8
+Nodo 5: 2,h, (58)(70)->6
+Nodo 6: 1,h, (90)->-1
+Nodo 7: 1,h, () Nodo libre->-1
+Nodo 8: 1,h, (47)->5
+
+Baja 90
+//se produce underflow en el nodo 6 que se soluciona con el nodo izquierdo cambiando de separador al 70 y poniendolo en el nodo que se buscaba la eliminacion
+Nodo 0: 1,i, 1(73)2
+Nodo 1: 2,i 3(44)4(46)8
+Nodo 2: 1,i, 5(70)6
+Nodo 3: 2,h, (20)(29)->4
+Nodo 4: 3,h, (44)(45)->8
+Nodo 5: 2,h, (58)->6
+Nodo 6: 1,h, (70)->-1
+Nodo 7: 1,h, () Nodo libre->-1
+Nodo 8: 1,h, (47)->5

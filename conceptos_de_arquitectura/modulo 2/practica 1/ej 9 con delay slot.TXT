@@ -1,0 +1,15 @@
+.data
+a: .word 5
+x: .word 0
+y: .word 6
+.code
+ld r1, a(r0)
+ld r2, x(r0)
+ld r3, y(r0)
+loop: beqz r1, fin ; si a=0 salta
+dadd r2, r2, r3 ; x=x+y
+j loop
+daddi r1, r1, -1 ; a=a-1
+fin: sd r2, x(r0)
+sd r1, a(r0)
+halt

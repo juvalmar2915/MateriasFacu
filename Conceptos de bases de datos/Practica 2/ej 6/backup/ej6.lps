@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ej6.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="16"/>
+        <CursorPos X="14" Y="40"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="6" HistoryIndex="5">
+      <Position1>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="11" Column="31"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="16" Column="8"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="11" Column="27"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="16" Column="23"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="15" Column="6"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ej6.lpr"/>
+        <Caret Line="14" Column="16"/>
+      </Position6>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

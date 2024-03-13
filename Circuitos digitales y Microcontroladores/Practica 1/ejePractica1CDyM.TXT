@@ -1,0 +1,2 @@
+DDRB=0x0F; // Data direction register que Indica En port que bits seran de output y cuales de input en este caso 00001111b
+PORTB=0x0E; // Data register Indica que luces se deben encender en este caso 00001110b

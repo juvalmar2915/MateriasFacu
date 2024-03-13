@@ -1,0 +1,28 @@
+#include <stdio.h>
+void reordenar( unsigned char *, unsigned char);
+void reordenar( unsigned char * arreglo, unsigned char tamano){
+    unsigned int i;
+    unsigned char aux;
+    for (i=0;i<tamano/2;i++){
+       aux=arreglo[tamano-1-i];
+       arreglo[tamano-1-i]=arreglo[i];
+       arreglo[i]=aux;
+    }
+};
+
+int main()
+{
+    unsigned char arr[]={ 1, 2, 3,4};
+    int x;
+    for (x=0;x<4;x++){
+       printf("%d ",arr[x]);
+    }
+    printf("\n");
+    reordenar(arr,4);
+    for (x=0;x<4;x++){
+       printf("%d ",arr[x]);
+    }
+    
+
+    return 0;
+}

@@ -1,0 +1,89 @@
+orden 5 max claves 4 min claves 5/2-1=1
+Nodo 0:1,i, 1(140)2
+Nodo 1:1,i 3(28)4
+Nodo 2:1,i, 5(150)6
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (148)(149)
+Nodo 6:1,h, (180)
+
+Baja 140
+Nodo 0:1,i, 1()2 // no se puede realizar la baja directa al encontrarse en un nodo interno, busco al minimo del subarbol derecho y lo reemplazo
+Nodo 1:1,i 3(28)4
+Nodo 2:1,i, 5(150)6
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (148)(149)
+Nodo 6:1,h, (180)
+
+Nodo 0:1,i, 1(148)2 
+Nodo 1:1,i 3(28)4
+Nodo 2:1,i, 5(150)6
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (149)
+Nodo 6:1,h, (180)
+
+Baja 180
+L0, L2, L6, L5, E5,L1, E1
+Nodo 0:1,i, 1(148)2 
+Nodo 1:1,i 3(28)4
+Nodo 2:1,i, 5(150)6
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (149)
+Nodo 6:1,h, () //underflow pido claves al nodo 5 por politica izquierda pero al no tener claves el nodo 5 se procude una fusion
+
+Nodo 0:1,i, 1(148)2 
+Nodo 1:1,i 3(28)4
+Nodo 2:1,i, () //underflow intento balancear con el nodo izquierdo pero esta al minimo se provoca otra fusion
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+
+Nodo 0:1,i, ()//nodo libre 
+Nodo 1:1,i 3(28)4(148)5
+Nodo 2:1,i, ()//nodo libre
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(34)(35)
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+
+Alta 32
+Nodo 0:1,i, () //nodo libre
+Nodo 1:1,i 3(28)4(148)5
+Nodo 2:1,i, ()//nodo libre
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:4,h (30)(31)(32)(34)(35) //overflow subo al 32 y creo un nuevo nodo con las claves 34 y 35
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+
+Nodo 0:1,i, () //nodo libre
+Nodo 1:1,i 3(28)4(32)7(148)5
+Nodo 2:1,i, ()//nodo libre
+Nodo 3:4,h, (20)(21)(22)(23)
+Nodo 4:2,h (30)(31)
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+Nodo 7:2,h (34)(35)
+
+Alta 24
+Nodo 0:1,i, () //nodo libre
+Nodo 1:1,i 3(28)4(32)7(148)5
+Nodo 2:1,i, ()//nodo libre
+Nodo 3:4,h, (20)(21)(22)(23)(24) //overflow subo 22, 23 y 24 se ponen en un nuevo nodo
+Nodo 4:2,h (30)(31)
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+Nodo 7:2,h (34)(35)
+
+Nodo 0:1,i, () //nodo libre
+Nodo 1:1,i 3(22)8(28)4(32)7(148)5
+Nodo 2:1,i, ()//nodo libre
+Nodo 3:4,h, (20)(21)
+Nodo 4:2,h (30)(31)
+Nodo 5:2,h, (149)(150)
+Nodo 6:1,h, () //nodo libre
+Nodo 7:2,h (34)(35)
+Nodo 8:2,h (23)(24)

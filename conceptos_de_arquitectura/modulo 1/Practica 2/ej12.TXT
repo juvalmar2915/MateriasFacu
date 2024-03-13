@@ -1,0 +1,5 @@
+a)El Timer funciona a traves de 2 registros de 8 bits ubicados en las direcciones 10h y 11h, estos son el registro de comparacion y el contador.
+Este emite una interrupcion al CPU cuando el registro contador es igual al de comparacion.
+b)El registro contador cumple la funcion de incrementarse automaticamente pasado cada ciclo de reloj del sistema. Este registro se encuentra en la posicion 10h
+El registro de comparacion cumple la funcion determinar el módulo de la cuenta del TIMER. Este registro se encuentra en la posicion 11h
+Para programar dichos registros se usa AL para asignarles al timer de donde quiere comenzar y en timer+1 en que valor va a querer interrumpir

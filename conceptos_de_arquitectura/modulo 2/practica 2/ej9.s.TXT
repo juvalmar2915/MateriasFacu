@@ -1,0 +1,24 @@
+.data
+valor: .word 4
+result: .word 0
+.text
+daddi $sp, $0, 0x400 ; Inicializa el puntero al tope de la pila (1)
+ld $a0, valor($0)
+jal factorial
+sd $v0, result($0)
+halt
+
+factorial: daddi $sp, $sp, -16
+sd $ra, 0($sp)
+sd $s0, 8($sp)
+dadd $s0, $zero, $a0
+beqz $s0, terminar
+daddi $a0, $a0, -1 
+jal factorial
+dmul $v0, $v0, $s0
+j terminar2
+terminar: daddi $v0, $zero, 1
+terminar2: ld $ra, 0($sp)
+ld $s0, 8($sp)
+daddi $sp, $sp, 16
+jr $ra

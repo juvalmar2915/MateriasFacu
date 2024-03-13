@@ -1,0 +1,20 @@
+a) El efecto que tiene habilitar delay slot es ejecutar la linea siguiente al salto evitando de esta manera los atascos de tipo branch taken.
+b) La instruccion NOP se incluye para ejecutar una instruccion de manera de evitar los atascos de tipo branch taken. Si no estuviera se ejecutaria la instruccion halt de
+manera que no entraria al loop terminando el programa en la primera instancia.
+c) 88 ciclos, 59 instrucciones, 1,492 CPI
+d) .data
+cant: .word 8
+datos: .word 1, 2, 3, 4, 5, 6, 7, 8
+res: .word 0
+.code
+dadd r1, r0, r0
+ld r2, cant(r0)
+loop: ld r3, datos(r1)
+daddi r2, r2, -1
+dsll r3, r3, 1
+sd r3, res(r1)
+bnez r2, loop
+daddi r1, r1, 8
+halt
+
+En este caso contamos con 94 ciclos, 51 instrucciones y 1,843 CPI

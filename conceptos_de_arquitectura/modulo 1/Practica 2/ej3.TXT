@@ -1,0 +1,16 @@
+org 1000h
+inicioabc DB 41H
+findeabc DB "Z"
+org 2000h
+mov cx, findeabc
+mov bx, offset inicioabc
+mov al,1
+sigo: int 7
+add inicioabc, 20H
+int 7
+sub inicioabc, 20H
+inc inicioabc
+cmp cx, inicioabc
+jnz sigo
+int 0
+end

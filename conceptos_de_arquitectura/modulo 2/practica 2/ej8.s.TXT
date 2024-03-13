@@ -1,0 +1,20 @@
+.data
+cadena1: .asciiz "pluton"
+cadena2: .asciiz "pluto"
+.code
+daddi $a0, $zero, cadena1
+daddi $a1, $zero, cadena2
+jal identico
+halt
+
+identico: dadd $v0, $zero, $zero
+comparo: lbu $t1, 0($a0)
+lbu $t2, 0($a1)
+beq $t1, $t2, sigo
+j termino
+sigo: daddi $a0, $a0, 1
+daddi $a1, $a1, 1
+daddi $v0, $v0, 1
+bnez $t1, comparo
+daddi $v0, $zero, -1
+termino: jr $ra

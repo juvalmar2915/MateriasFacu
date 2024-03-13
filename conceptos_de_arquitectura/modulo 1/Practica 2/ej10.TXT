@@ -1,0 +1,9 @@
+a) ISR: Indica que linea se esta interrumpiendo
+IRR: Indica que linea pide interrumpir
+IMR: enmascara interrupciones
+INT 0-INT 7: se asigna un numero de acuerdo a en que lugar de la memoria utilizada para perifericos se ira a buscar la interrupcion, 
+dicho numero es multiplicado por 4 y ese valor es el que va a buscar en memoria.
+b)los registros programables son: el IMR, el EOI y el INT0-INT7.
+La instruccion OUT sirve para ingresar al PIC para darle un valor a uno de esos registros, siempre por medio de AL(parte baja del registro AX).
+c)la instruccion CLI deshabilita las interrupciones mientras que la instruccion STI habilita interrupciones es decir CLI le indica al CPU que no debe mandar mas interrupciones mientras STI indica lo contrario.
+Estas sirven para indicar a partir de donde es leida una interrupcion programada 

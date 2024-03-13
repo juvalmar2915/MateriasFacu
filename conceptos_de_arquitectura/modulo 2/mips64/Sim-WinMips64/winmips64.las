@@ -1,0 +1,1 @@
+C:\Users\valen\OneDrive\Escritorio\conceptos_de_arquitectura\modulo 2\practica 1\ej2.s.TXT

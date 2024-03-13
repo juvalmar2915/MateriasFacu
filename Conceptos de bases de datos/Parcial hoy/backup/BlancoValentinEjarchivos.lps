@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <TopLine Value="32"/>
+        <CursorPos X="18" Y="15"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <Caret Line="5" Column="3"/>
+      </Position1>
+      <Position2>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <Caret Line="26" Column="15"/>
+      </Position2>
+      <Position3>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <Caret Line="16" Column="18"/>
+      </Position3>
+      <Position4>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <Caret Line="34" Column="12" TopLine="5"/>
+      </Position4>
+      <Position5>
+        <Filename Value="BlancoValentinEjarchivos.lpr"/>
+        <Caret Line="16"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

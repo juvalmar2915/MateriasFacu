@@ -1,0 +1,68 @@
+.data
+Control: .word32 0x10000
+Data: .word32 0x10008
+verde: .word32 0x0000FF00
+Ingreso: .asciiz "Ingrese el valor x inicial seguido de y, y sus lados 1 y 2 respect"
+.code
+lwu $s6, Control($0)
+lwu $s7, Data($0)
+jal ingreso
+dadd $a0, $0, $v0
+dadd $a1, $0, $v1
+dadd $a2, $0, $t6
+dadd $a3, $0, $t7
+jal dibujo
+halt
+
+ingreso: daddi $t0, $0, 4
+daddi $t1, $0, Ingreso
+sd $t1, 0($s7)
+sd $t0, 0($s6)
+daddi $t0, $0, 8
+sd $t0, 0($s6)
+ld $v0, 0($s7)
+sd $t0, 0($s6)
+ld $v1, 0($s7)
+sd $t0, 0($s6)
+ld $t6, 0($s7)
+sd $t0, 0($s6)
+ld $t7, 0($s7)
+jr $ra
+
+dibujo: dadd $t0, $0, $a0
+dadd $t1, $0, $a1
+dadd $t2, $0, $a2
+dadd $t3, $0, $a3
+daddi $t7, $0, 5
+lwu $t4, verde($0)
+loopy: sb $t1, 4($s7)
+sb $t0, 5($s7)
+sw $t4, 0($s7)
+sd $t7, 0($s6)
+daddi $t1,$t1,1
+daddi $t2, $t2, -1
+bnez $t2, loopy
+loopx: sb $t1, 4($s7)
+sb $t0, 5($s7)
+sw $t4, 0($s7)
+sd $t7, 0($s6)
+daddi $t0,$t0,1
+daddi $t3, $t3, -1
+bnez $t3, loopx
+dadd $t3, $0, $a3
+dadd $t2, $0, $a2
+loopyneg: sb $t1, 4($s7)
+sb $t0, 5($s7)
+sw $t4, 0($s7)
+sd $t7, 0($s6)
+daddi $t1,$t1,-1
+daddi $t2, $t2, -1
+bnez $t2, loopyneg
+loopxneg: sb $t1, 4($s7)
+sb $t0, 5($s7)
+sw $t4, 0($s7)
+sd $t7, 0($s6)
+daddi $t0,$t0,-1
+daddi $t3, $t3, -1
+bnez $t3, loopxneg
+jr $ra

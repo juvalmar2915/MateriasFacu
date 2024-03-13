@@ -1,0 +1,747 @@
+
+Tp4.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         0000005c  00800100  000003e4  00000478  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000003e4  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000000e  0080015c  0080015c  000004d4  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  000004d4  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000504  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000110  00000000  00000000  00000544  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000011ba  00000000  00000000  00000654  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000009bd  00000000  00000000  0000180e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000009ef  00000000  00000000  000021cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  0000024c  00000000  00000000  00002bbc  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000073d  00000000  00000000  00002e08  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    0000076a  00000000  00000000  00003545  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 000000e0  00000000  00000000  00003caf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e4 ee       	ldi	r30, 0xE4	; 228
+  7c:	f3 e0       	ldi	r31, 0x03	; 3
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	ac 35       	cpi	r26, 0x5C	; 92
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	ac e5       	ldi	r26, 0x5C	; 92
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	aa 36       	cpi	r26, 0x6A	; 106
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 f0 01 	jmp	0x3e0	; 0x3e0 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <main>:
+ */ 
+
+#include "main.h"
+
+int main(void){
+	SerialPort_Init(BR9600);
+  a6:	87 e6       	ldi	r24, 0x67	; 103
+  a8:	0e 94 31 01 	call	0x262	; 0x262 <SerialPort_Init>
+	SerialPort_TX_Enable(); 
+  ac:	0e 94 39 01 	call	0x272	; 0x272 <SerialPort_TX_Enable>
+	SerialPort_RX_Enable();            // Activo el Receptor del Puerto Serie
+  b0:	0e 94 3f 01 	call	0x27e	; 0x27e <SerialPort_RX_Enable>
+	SerialPort_RX_Interrupt_Enable();    // Activo Interrupción de recepcion.
+  b4:	0e 94 45 01 	call	0x28a	; 0x28a <SerialPort_RX_Interrupt_Enable>
+	sei();                                // Activo la mascara global de interrupciones (Bit I del SREG en 1)
+  b8:	78 94       	sei
+	uint8_t c;
+	uint8_t rojo=100;
+	uint8_t verde=100;
+	uint8_t azul=100;
+	
+	flag_r=1;
+  ba:	81 e0       	ldi	r24, 0x01	; 1
+  bc:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <flag_r>
+	flag_v=1;
+  c0:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <flag_v>
+	flag_a=1;
+  c4:	80 93 5c 01 	sts	0x015C, r24	; 0x80015c <__data_end>
+	
+	Terminal_configurarRegs();
+  c8:	0e 94 da 01 	call	0x3b4	; 0x3b4 <Terminal_configurarRegs>
+	SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+  cc:	80 e0       	ldi	r24, 0x00	; 0
+  ce:	91 e0       	ldi	r25, 0x01	; 1
+  d0:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+	sei();                                // Activo la mascara global de interrupciones (Bit I del SREG en 1)
+	
+	uint8_t c;
+	uint8_t rojo=100;
+	uint8_t verde=100;
+	uint8_t azul=100;
+  d4:	14 e6       	ldi	r17, 0x64	; 100
+	SerialPort_RX_Interrupt_Enable();    // Activo Interrupción de recepcion.
+	sei();                                // Activo la mascara global de interrupciones (Bit I del SREG en 1)
+	
+	uint8_t c;
+	uint8_t rojo=100;
+	uint8_t verde=100;
+  d6:	04 e6       	ldi	r16, 0x64	; 100
+	SerialPort_RX_Enable();            // Activo el Receptor del Puerto Serie
+	SerialPort_RX_Interrupt_Enable();    // Activo Interrupción de recepcion.
+	sei();                                // Activo la mascara global de interrupciones (Bit I del SREG en 1)
+	
+	uint8_t c;
+	uint8_t rojo=100;
+  d8:	d4 e6       	ldi	r29, 0x64	; 100
+	
+	Terminal_configurarRegs();
+	SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+	
+    while (1){
+		if(nuevoComando){
+  da:	80 91 5f 01 	lds	r24, 0x015F	; 0x80015f <nuevoComando>
+  de:	88 23       	and	r24, r24
+  e0:	09 f4       	brne	.+2      	; 0xe4 <main+0x3e>
+  e2:	82 c0       	rjmp	.+260    	; 0x1e8 <main+0x142>
+			c = Terminal_leerComando(bufferRX);
+  e4:	80 e6       	ldi	r24, 0x60	; 96
+  e6:	91 e0       	ldi	r25, 0x01	; 1
+  e8:	0e 94 9a 01 	call	0x334	; 0x334 <Terminal_leerComando>
+  ec:	c8 2f       	mov	r28, r24
+			if(c==1){//modificar rojo 
+  ee:	81 30       	cpi	r24, 0x01	; 1
+  f0:	41 f5       	brne	.+80     	; 0x142 <main+0x9c>
+  f2:	1d c0       	rjmp	.+58     	; 0x12e <main+0x88>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  f4:	2f ef       	ldi	r18, 0xFF	; 255
+  f6:	83 ed       	ldi	r24, 0xD3	; 211
+  f8:	90 e3       	ldi	r25, 0x30	; 48
+  fa:	21 50       	subi	r18, 0x01	; 1
+  fc:	80 40       	sbci	r24, 0x00	; 0
+  fe:	90 40       	sbci	r25, 0x00	; 0
+ 100:	e1 f7       	brne	.-8      	; 0xfa <main+0x54>
+ 102:	00 c0       	rjmp	.+0      	; 0x104 <main+0x5e>
+ 104:	00 00       	nop
+				while(c==1){
+					_delay_ms(1000);
+					rojo = Terminal_leerPotenciometro();
+ 106:	0e 94 c9 01 	call	0x392	; 0x392 <Terminal_leerPotenciometro>
+ 10a:	d8 2f       	mov	r29, r24
+					SerialPort_Send_uint8_t(rojo);
+ 10c:	0e 94 6f 01 	call	0x2de	; 0x2de <SerialPort_Send_uint8_t>
+					SerialPort_Send_String("\r\n");
+ 110:	88 e5       	ldi	r24, 0x58	; 88
+ 112:	91 e0       	ldi	r25, 0x01	; 1
+ 114:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+					if(nuevoComando){
+ 118:	80 91 5f 01 	lds	r24, 0x015F	; 0x80015f <nuevoComando>
+ 11c:	88 23       	and	r24, r24
+ 11e:	39 f0       	breq	.+14     	; 0x12e <main+0x88>
+						c = Terminal_leerComando(bufferRX);
+ 120:	80 e6       	ldi	r24, 0x60	; 96
+ 122:	91 e0       	ldi	r25, 0x01	; 1
+ 124:	0e 94 9a 01 	call	0x334	; 0x334 <Terminal_leerComando>
+						if(c!=4) c=1;
+ 128:	84 30       	cpi	r24, 0x04	; 4
+ 12a:	09 f4       	brne	.+2      	; 0x12e <main+0x88>
+					_delay_ms(1000);
+					rojo = Terminal_leerPotenciometro();
+					SerialPort_Send_uint8_t(rojo);
+					SerialPort_Send_String("\r\n");
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+ 12c:	c8 2f       	mov	r28, r24
+	
+    while (1){
+		if(nuevoComando){
+			c = Terminal_leerComando(bufferRX);
+			if(c==1){//modificar rojo 
+				while(c==1){
+ 12e:	c1 30       	cpi	r28, 0x01	; 1
+ 130:	09 f3       	breq	.-62     	; 0xf4 <main+0x4e>
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+						if(c!=4) c=1;
+					}
+				}
+				flag_r=1;
+ 132:	81 e0       	ldi	r24, 0x01	; 1
+ 134:	80 93 5e 01 	sts	0x015E, r24	; 0x80015e <flag_r>
+				SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+ 138:	80 e0       	ldi	r24, 0x00	; 0
+ 13a:	91 e0       	ldi	r25, 0x01	; 1
+ 13c:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+ 140:	53 c0       	rjmp	.+166    	; 0x1e8 <main+0x142>
+			}
+			else if(c==2){//modificar verde
+ 142:	82 30       	cpi	r24, 0x02	; 2
+ 144:	41 f5       	brne	.+80     	; 0x196 <main+0xf0>
+ 146:	1d c0       	rjmp	.+58     	; 0x182 <main+0xdc>
+ 148:	2f ef       	ldi	r18, 0xFF	; 255
+ 14a:	83 ed       	ldi	r24, 0xD3	; 211
+ 14c:	90 e3       	ldi	r25, 0x30	; 48
+ 14e:	21 50       	subi	r18, 0x01	; 1
+ 150:	80 40       	sbci	r24, 0x00	; 0
+ 152:	90 40       	sbci	r25, 0x00	; 0
+ 154:	e1 f7       	brne	.-8      	; 0x14e <main+0xa8>
+ 156:	00 c0       	rjmp	.+0      	; 0x158 <main+0xb2>
+ 158:	00 00       	nop
+				while(c==2){
+					_delay_ms(1000);
+					verde = Terminal_leerPotenciometro();
+ 15a:	0e 94 c9 01 	call	0x392	; 0x392 <Terminal_leerPotenciometro>
+ 15e:	08 2f       	mov	r16, r24
+					SerialPort_Send_uint8_t(verde);
+ 160:	0e 94 6f 01 	call	0x2de	; 0x2de <SerialPort_Send_uint8_t>
+					SerialPort_Send_String("\r\n");
+ 164:	88 e5       	ldi	r24, 0x58	; 88
+ 166:	91 e0       	ldi	r25, 0x01	; 1
+ 168:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+					if(nuevoComando){
+ 16c:	80 91 5f 01 	lds	r24, 0x015F	; 0x80015f <nuevoComando>
+ 170:	88 23       	and	r24, r24
+ 172:	39 f0       	breq	.+14     	; 0x182 <main+0xdc>
+						c = Terminal_leerComando(bufferRX);
+ 174:	80 e6       	ldi	r24, 0x60	; 96
+ 176:	91 e0       	ldi	r25, 0x01	; 1
+ 178:	0e 94 9a 01 	call	0x334	; 0x334 <Terminal_leerComando>
+						if(c!=4) c=2;
+ 17c:	84 30       	cpi	r24, 0x04	; 4
+ 17e:	09 f4       	brne	.+2      	; 0x182 <main+0xdc>
+					_delay_ms(1000);
+					verde = Terminal_leerPotenciometro();
+					SerialPort_Send_uint8_t(verde);
+					SerialPort_Send_String("\r\n");
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+ 180:	c8 2f       	mov	r28, r24
+				}
+				flag_r=1;
+				SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+			}
+			else if(c==2){//modificar verde
+				while(c==2){
+ 182:	c2 30       	cpi	r28, 0x02	; 2
+ 184:	09 f3       	breq	.-62     	; 0x148 <main+0xa2>
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+						if(c!=4) c=2;
+					}
+				}
+				flag_v=1;
+ 186:	81 e0       	ldi	r24, 0x01	; 1
+ 188:	80 93 5d 01 	sts	0x015D, r24	; 0x80015d <flag_v>
+				SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+ 18c:	80 e0       	ldi	r24, 0x00	; 0
+ 18e:	91 e0       	ldi	r25, 0x01	; 1
+ 190:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+ 194:	29 c0       	rjmp	.+82     	; 0x1e8 <main+0x142>
+			}
+			else if(c==3){//modificar azul
+ 196:	83 30       	cpi	r24, 0x03	; 3
+ 198:	39 f5       	brne	.+78     	; 0x1e8 <main+0x142>
+ 19a:	1d c0       	rjmp	.+58     	; 0x1d6 <main+0x130>
+ 19c:	2f ef       	ldi	r18, 0xFF	; 255
+ 19e:	83 ed       	ldi	r24, 0xD3	; 211
+ 1a0:	90 e3       	ldi	r25, 0x30	; 48
+ 1a2:	21 50       	subi	r18, 0x01	; 1
+ 1a4:	80 40       	sbci	r24, 0x00	; 0
+ 1a6:	90 40       	sbci	r25, 0x00	; 0
+ 1a8:	e1 f7       	brne	.-8      	; 0x1a2 <main+0xfc>
+ 1aa:	00 c0       	rjmp	.+0      	; 0x1ac <main+0x106>
+ 1ac:	00 00       	nop
+				while(c==3){
+					_delay_ms(1000);
+					azul = Terminal_leerPotenciometro();
+ 1ae:	0e 94 c9 01 	call	0x392	; 0x392 <Terminal_leerPotenciometro>
+ 1b2:	18 2f       	mov	r17, r24
+					SerialPort_Send_uint8_t(azul);
+ 1b4:	0e 94 6f 01 	call	0x2de	; 0x2de <SerialPort_Send_uint8_t>
+					SerialPort_Send_String("\r\n");
+ 1b8:	88 e5       	ldi	r24, 0x58	; 88
+ 1ba:	91 e0       	ldi	r25, 0x01	; 1
+ 1bc:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+					if(nuevoComando){
+ 1c0:	80 91 5f 01 	lds	r24, 0x015F	; 0x80015f <nuevoComando>
+ 1c4:	88 23       	and	r24, r24
+ 1c6:	39 f0       	breq	.+14     	; 0x1d6 <main+0x130>
+						c = Terminal_leerComando(bufferRX);
+ 1c8:	80 e6       	ldi	r24, 0x60	; 96
+ 1ca:	91 e0       	ldi	r25, 0x01	; 1
+ 1cc:	0e 94 9a 01 	call	0x334	; 0x334 <Terminal_leerComando>
+						if(c!=4) c=3;
+ 1d0:	84 30       	cpi	r24, 0x04	; 4
+ 1d2:	09 f4       	brne	.+2      	; 0x1d6 <main+0x130>
+					_delay_ms(1000);
+					azul = Terminal_leerPotenciometro();
+					SerialPort_Send_uint8_t(azul);
+					SerialPort_Send_String("\r\n");
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+ 1d4:	c8 2f       	mov	r28, r24
+				}
+				flag_v=1;
+				SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+			}
+			else if(c==3){//modificar azul
+				while(c==3){
+ 1d6:	c3 30       	cpi	r28, 0x03	; 3
+ 1d8:	09 f3       	breq	.-62     	; 0x19c <main+0xf6>
+					if(nuevoComando){
+						c = Terminal_leerComando(bufferRX);
+						if(c!=4) c=3;
+					}
+				}
+				flag_a=1;
+ 1da:	81 e0       	ldi	r24, 0x01	; 1
+ 1dc:	80 93 5c 01 	sts	0x015C, r24	; 0x80015c <__data_end>
+				SerialPort_Send_String("Ingrese R para modificar rojo, V para verde, A para azul, S para para confirmar cambios \r\n");
+ 1e0:	80 e0       	ldi	r24, 0x00	; 0
+ 1e2:	91 e0       	ldi	r25, 0x01	; 1
+ 1e4:	0e 94 53 01 	call	0x2a6	; 0x2a6 <SerialPort_Send_String>
+			}
+		}
+		if(flag_r){
+ 1e8:	80 91 5e 01 	lds	r24, 0x015E	; 0x80015e <flag_r>
+ 1ec:	88 23       	and	r24, r24
+ 1ee:	41 f0       	breq	.+16     	; 0x200 <main+0x15a>
+			OCR1A = rojo;
+ 1f0:	8d 2f       	mov	r24, r29
+ 1f2:	90 e0       	ldi	r25, 0x00	; 0
+ 1f4:	90 93 89 00 	sts	0x0089, r25	; 0x800089 <__TEXT_REGION_LENGTH__+0x7f8089>
+ 1f8:	80 93 88 00 	sts	0x0088, r24	; 0x800088 <__TEXT_REGION_LENGTH__+0x7f8088>
+			flag_r=0;
+ 1fc:	10 92 5e 01 	sts	0x015E, r1	; 0x80015e <flag_r>
+		}
+		if(flag_v){
+ 200:	80 91 5d 01 	lds	r24, 0x015D	; 0x80015d <flag_v>
+ 204:	88 23       	and	r24, r24
+ 206:	41 f0       	breq	.+16     	; 0x218 <main+0x172>
+			OCR1B = verde;
+ 208:	80 2f       	mov	r24, r16
+ 20a:	90 e0       	ldi	r25, 0x00	; 0
+ 20c:	90 93 8b 00 	sts	0x008B, r25	; 0x80008b <__TEXT_REGION_LENGTH__+0x7f808b>
+ 210:	80 93 8a 00 	sts	0x008A, r24	; 0x80008a <__TEXT_REGION_LENGTH__+0x7f808a>
+			flag_v=0;
+ 214:	10 92 5d 01 	sts	0x015D, r1	; 0x80015d <flag_v>
+		}
+		if(flag_a){
+ 218:	80 91 5c 01 	lds	r24, 0x015C	; 0x80015c <__data_end>
+ 21c:	88 23       	and	r24, r24
+ 21e:	51 f0       	breq	.+20     	; 0x234 <main+0x18e>
+			if(azul==255) azul=254;
+ 220:	1f 3f       	cpi	r17, 0xFF	; 255
+ 222:	19 f0       	breq	.+6      	; 0x22a <main+0x184>
+			else if (azul==0) azul=1;
+ 224:	11 23       	and	r17, r17
+ 226:	19 f0       	breq	.+6      	; 0x22e <main+0x188>
+ 228:	03 c0       	rjmp	.+6      	; 0x230 <main+0x18a>
+		if(flag_v){
+			OCR1B = verde;
+			flag_v=0;
+		}
+		if(flag_a){
+			if(azul==255) azul=254;
+ 22a:	1e ef       	ldi	r17, 0xFE	; 254
+ 22c:	01 c0       	rjmp	.+2      	; 0x230 <main+0x18a>
+			else if (azul==0) azul=1;
+ 22e:	11 e0       	ldi	r17, 0x01	; 1
+			flag_a=0;
+ 230:	10 92 5c 01 	sts	0x015C, r1	; 0x80015c <__data_end>
+		}
+		
+		//Pongo en bajo PB5 el tiempo necesario para cumplir con el ciclo de trabajo
+		PORTB &= ~(1<<PORTB5);
+ 234:	85 b1       	in	r24, 0x05	; 5
+ 236:	8f 7d       	andi	r24, 0xDF	; 223
+ 238:	85 b9       	out	0x05, r24	; 5
+		OCR0A = azul;
+ 23a:	17 bd       	out	0x27, r17	; 39
+		TCNT0 = 0;
+ 23c:	16 bc       	out	0x26, r1	; 38
+		while((TIFR0&(1<<OCF0A))==0);
+ 23e:	a9 9b       	sbis	0x15, 1	; 21
+ 240:	fe cf       	rjmp	.-4      	; 0x23e <main+0x198>
+		TIFR0 |= (1<<OCF0A);
+ 242:	85 b3       	in	r24, 0x15	; 21
+ 244:	82 60       	ori	r24, 0x02	; 2
+ 246:	85 bb       	out	0x15, r24	; 21
+		
+		//Pongo en alto PB5 el tiempo necesario para completar el periodo
+		PORTB |= (1<<PORTB5);
+ 248:	85 b1       	in	r24, 0x05	; 5
+ 24a:	80 62       	ori	r24, 0x20	; 32
+ 24c:	85 b9       	out	0x05, r24	; 5
+		OCR0A = 255-azul;
+ 24e:	81 2f       	mov	r24, r17
+ 250:	80 95       	com	r24
+ 252:	87 bd       	out	0x27, r24	; 39
+		TCNT0 = 0;
+ 254:	16 bc       	out	0x26, r1	; 38
+		while((TIFR0&(1<<OCF0A))==0);
+ 256:	a9 9b       	sbis	0x15, 1	; 21
+ 258:	fe cf       	rjmp	.-4      	; 0x256 <main+0x1b0>
+		TIFR0 |= (1<<OCF0A);	
+ 25a:	85 b3       	in	r24, 0x15	; 21
+ 25c:	82 60       	ori	r24, 0x02	; 2
+ 25e:	85 bb       	out	0x15, r24	; 21
+	
+    }
+ 260:	3c cf       	rjmp	.-392    	; 0xda <main+0x34>
+
+00000262 <SerialPort_Init>:
+ 262:	10 92 c1 00 	sts	0x00C1, r1	; 0x8000c1 <__TEXT_REGION_LENGTH__+0x7f80c1>
+ 266:	96 e0       	ldi	r25, 0x06	; 6
+ 268:	90 93 c2 00 	sts	0x00C2, r25	; 0x8000c2 <__TEXT_REGION_LENGTH__+0x7f80c2>
+ 26c:	80 93 c4 00 	sts	0x00C4, r24	; 0x8000c4 <__TEXT_REGION_LENGTH__+0x7f80c4>
+ 270:	08 95       	ret
+
+00000272 <SerialPort_TX_Enable>:
+ 272:	e1 ec       	ldi	r30, 0xC1	; 193
+ 274:	f0 e0       	ldi	r31, 0x00	; 0
+ 276:	80 81       	ld	r24, Z
+ 278:	88 60       	ori	r24, 0x08	; 8
+ 27a:	80 83       	st	Z, r24
+ 27c:	08 95       	ret
+
+0000027e <SerialPort_RX_Enable>:
+ 27e:	e1 ec       	ldi	r30, 0xC1	; 193
+ 280:	f0 e0       	ldi	r31, 0x00	; 0
+ 282:	80 81       	ld	r24, Z
+ 284:	80 61       	ori	r24, 0x10	; 16
+ 286:	80 83       	st	Z, r24
+ 288:	08 95       	ret
+
+0000028a <SerialPort_RX_Interrupt_Enable>:
+ 28a:	e1 ec       	ldi	r30, 0xC1	; 193
+ 28c:	f0 e0       	ldi	r31, 0x00	; 0
+ 28e:	80 81       	ld	r24, Z
+ 290:	80 68       	ori	r24, 0x80	; 128
+ 292:	80 83       	st	Z, r24
+ 294:	08 95       	ret
+
+00000296 <SerialPort_Wait_For_TX_Buffer_Free>:
+ 296:	80 91 c0 00 	lds	r24, 0x00C0	; 0x8000c0 <__TEXT_REGION_LENGTH__+0x7f80c0>
+ 29a:	85 ff       	sbrs	r24, 5
+ 29c:	fc cf       	rjmp	.-8      	; 0x296 <SerialPort_Wait_For_TX_Buffer_Free>
+ 29e:	08 95       	ret
+
+000002a0 <SerialPort_Send_Data>:
+ 2a0:	80 93 c6 00 	sts	0x00C6, r24	; 0x8000c6 <__TEXT_REGION_LENGTH__+0x7f80c6>
+ 2a4:	08 95       	ret
+
+000002a6 <SerialPort_Send_String>:
+ 2a6:	ef 92       	push	r14
+ 2a8:	ff 92       	push	r15
+ 2aa:	0f 93       	push	r16
+ 2ac:	1f 93       	push	r17
+ 2ae:	cf 93       	push	r28
+ 2b0:	7c 01       	movw	r14, r24
+ 2b2:	c0 e0       	ldi	r28, 0x00	; 0
+ 2b4:	07 c0       	rjmp	.+14     	; 0x2c4 <SerialPort_Send_String+0x1e>
+ 2b6:	0e 94 4b 01 	call	0x296	; 0x296 <SerialPort_Wait_For_TX_Buffer_Free>
+ 2ba:	f8 01       	movw	r30, r16
+ 2bc:	80 81       	ld	r24, Z
+ 2be:	0e 94 50 01 	call	0x2a0	; 0x2a0 <SerialPort_Send_Data>
+ 2c2:	cf 5f       	subi	r28, 0xFF	; 255
+ 2c4:	87 01       	movw	r16, r14
+ 2c6:	0c 0f       	add	r16, r28
+ 2c8:	11 1d       	adc	r17, r1
+ 2ca:	f8 01       	movw	r30, r16
+ 2cc:	80 81       	ld	r24, Z
+ 2ce:	81 11       	cpse	r24, r1
+ 2d0:	f2 cf       	rjmp	.-28     	; 0x2b6 <SerialPort_Send_String+0x10>
+ 2d2:	cf 91       	pop	r28
+ 2d4:	1f 91       	pop	r17
+ 2d6:	0f 91       	pop	r16
+ 2d8:	ff 90       	pop	r15
+ 2da:	ef 90       	pop	r14
+ 2dc:	08 95       	ret
+
+000002de <SerialPort_Send_uint8_t>:
+ 2de:	cf 93       	push	r28
+ 2e0:	df 93       	push	r29
+ 2e2:	d8 2f       	mov	r29, r24
+ 2e4:	0e 94 4b 01 	call	0x296	; 0x296 <SerialPort_Wait_For_TX_Buffer_Free>
+ 2e8:	89 e2       	ldi	r24, 0x29	; 41
+ 2ea:	d8 9f       	mul	r29, r24
+ 2ec:	81 2d       	mov	r24, r1
+ 2ee:	11 24       	eor	r1, r1
+ 2f0:	82 95       	swap	r24
+ 2f2:	8f 70       	andi	r24, 0x0F	; 15
+ 2f4:	80 5d       	subi	r24, 0xD0	; 208
+ 2f6:	0e 94 50 01 	call	0x2a0	; 0x2a0 <SerialPort_Send_Data>
+ 2fa:	d4 56       	subi	r29, 0x64	; 100
+ 2fc:	0e 94 4b 01 	call	0x296	; 0x296 <SerialPort_Wait_For_TX_Buffer_Free>
+ 300:	cd ec       	ldi	r28, 0xCD	; 205
+ 302:	dc 9f       	mul	r29, r28
+ 304:	c1 2d       	mov	r28, r1
+ 306:	11 24       	eor	r1, r1
+ 308:	c6 95       	lsr	r28
+ 30a:	c6 95       	lsr	r28
+ 30c:	c6 95       	lsr	r28
+ 30e:	80 e3       	ldi	r24, 0x30	; 48
+ 310:	8c 0f       	add	r24, r28
+ 312:	0e 94 50 01 	call	0x2a0	; 0x2a0 <SerialPort_Send_Data>
+ 316:	0e 94 4b 01 	call	0x296	; 0x296 <SerialPort_Wait_For_TX_Buffer_Free>
+ 31a:	cc 0f       	add	r28, r28
+ 31c:	8c 2f       	mov	r24, r28
+ 31e:	88 0f       	add	r24, r24
+ 320:	88 0f       	add	r24, r24
+ 322:	c8 0f       	add	r28, r24
+ 324:	8d 2f       	mov	r24, r29
+ 326:	8c 1b       	sub	r24, r28
+ 328:	80 5d       	subi	r24, 0xD0	; 208
+ 32a:	0e 94 50 01 	call	0x2a0	; 0x2a0 <SerialPort_Send_Data>
+ 32e:	df 91       	pop	r29
+ 330:	cf 91       	pop	r28
+ 332:	08 95       	ret
+
+00000334 <Terminal_leerComando>:
+#include <avr/io.h>
+extern RX_Buffer;
+extern bufferRX[10];
+extern cant;
+extern nuevoComando;
+int Terminal_leerComando(char *s){
+ 334:	fc 01       	movw	r30, r24
+	if (s[0]=='R'){
+ 336:	90 81       	ld	r25, Z
+ 338:	92 35       	cpi	r25, 0x52	; 82
+ 33a:	31 f4       	brne	.+12     	; 0x348 <Terminal_leerComando+0x14>
+		if (s[1]=='\n'){
+ 33c:	81 81       	ldd	r24, Z+1	; 0x01
+ 33e:	8a 30       	cpi	r24, 0x0A	; 10
+ 340:	e1 f0       	breq	.+56     	; 0x37a <Terminal_leerComando+0x46>
+			return 1; 
+		}
+		else{
+			return 5;
+ 342:	85 e0       	ldi	r24, 0x05	; 5
+ 344:	90 e0       	ldi	r25, 0x00	; 0
+ 346:	08 95       	ret
+		}
+	}
+	else{
+		if(s[0]=='V'){
+ 348:	96 35       	cpi	r25, 0x56	; 86
+ 34a:	31 f4       	brne	.+12     	; 0x358 <Terminal_leerComando+0x24>
+			if (s[1]=='\n'){
+ 34c:	81 81       	ldd	r24, Z+1	; 0x01
+ 34e:	8a 30       	cpi	r24, 0x0A	; 10
+ 350:	b9 f4       	brne	.+46     	; 0x380 <Terminal_leerComando+0x4c>
+				return 2;
+ 352:	82 e0       	ldi	r24, 0x02	; 2
+ 354:	90 e0       	ldi	r25, 0x00	; 0
+ 356:	08 95       	ret
+			else{
+				return 5;
+			}
+		}
+		else{
+			if (s[0]=='A'){
+ 358:	91 34       	cpi	r25, 0x41	; 65
+ 35a:	31 f4       	brne	.+12     	; 0x368 <Terminal_leerComando+0x34>
+				if (s[1]=='\n'){
+ 35c:	81 81       	ldd	r24, Z+1	; 0x01
+ 35e:	8a 30       	cpi	r24, 0x0A	; 10
+ 360:	91 f4       	brne	.+36     	; 0x386 <Terminal_leerComando+0x52>
+					return 3;
+ 362:	83 e0       	ldi	r24, 0x03	; 3
+ 364:	90 e0       	ldi	r25, 0x00	; 0
+ 366:	08 95       	ret
+				else{
+					return 5;
+				}
+			}
+			else{
+				if (s[0]=='S'){
+ 368:	93 35       	cpi	r25, 0x53	; 83
+ 36a:	31 f4       	brne	.+12     	; 0x378 <Terminal_leerComando+0x44>
+					if (s[1]=='\n'){
+ 36c:	81 81       	ldd	r24, Z+1	; 0x01
+ 36e:	8a 30       	cpi	r24, 0x0A	; 10
+ 370:	69 f4       	brne	.+26     	; 0x38c <Terminal_leerComando+0x58>
+						return 4;
+ 372:	84 e0       	ldi	r24, 0x04	; 4
+ 374:	90 e0       	ldi	r25, 0x00	; 0
+ 376:	08 95       	ret
+					}
+				}
+			}
+		}
+	}
+}
+ 378:	08 95       	ret
+extern cant;
+extern nuevoComando;
+int Terminal_leerComando(char *s){
+	if (s[0]=='R'){
+		if (s[1]=='\n'){
+			return 1; 
+ 37a:	81 e0       	ldi	r24, 0x01	; 1
+ 37c:	90 e0       	ldi	r25, 0x00	; 0
+ 37e:	08 95       	ret
+		if(s[0]=='V'){
+			if (s[1]=='\n'){
+				return 2;
+			}
+			else{
+				return 5;
+ 380:	85 e0       	ldi	r24, 0x05	; 5
+ 382:	90 e0       	ldi	r25, 0x00	; 0
+ 384:	08 95       	ret
+			if (s[0]=='A'){
+				if (s[1]=='\n'){
+					return 3;
+				}
+				else{
+					return 5;
+ 386:	85 e0       	ldi	r24, 0x05	; 5
+ 388:	90 e0       	ldi	r25, 0x00	; 0
+ 38a:	08 95       	ret
+				if (s[0]=='S'){
+					if (s[1]=='\n'){
+						return 4;
+					}
+					else{
+						return 5;
+ 38c:	85 e0       	ldi	r24, 0x05	; 5
+ 38e:	90 e0       	ldi	r25, 0x00	; 0
+					}
+				}
+			}
+		}
+	}
+}
+ 390:	08 95       	ret
+
+00000392 <Terminal_leerPotenciometro>:
+
+uint8_t Terminal_leerPotenciometro(){
+	ADCSRA |= (1<<ADSC);//start conversion
+ 392:	ea e7       	ldi	r30, 0x7A	; 122
+ 394:	f0 e0       	ldi	r31, 0x00	; 0
+ 396:	80 81       	ld	r24, Z
+ 398:	80 64       	ori	r24, 0x40	; 64
+ 39a:	80 83       	st	Z, r24
+	while((ADCSRA&(1<<ADIF))==0);//wait for conversion to finish
+ 39c:	80 91 7a 00 	lds	r24, 0x007A	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+ 3a0:	84 ff       	sbrs	r24, 4
+ 3a2:	fc cf       	rjmp	.-8      	; 0x39c <Terminal_leerPotenciometro+0xa>
+	ADCSRA |= (1<<ADIF); //borrar flag
+ 3a4:	ea e7       	ldi	r30, 0x7A	; 122
+ 3a6:	f0 e0       	ldi	r31, 0x00	; 0
+ 3a8:	80 81       	ld	r24, Z
+ 3aa:	80 61       	ori	r24, 0x10	; 16
+ 3ac:	80 83       	st	Z, r24
+	return ADCH;
+ 3ae:	80 91 79 00 	lds	r24, 0x0079	; 0x800079 <__TEXT_REGION_LENGTH__+0x7f8079>
+}
+ 3b2:	08 95       	ret
+
+000003b4 <Terminal_configurarRegs>:
+
+void Terminal_configurarRegs(void){
+	DDRB = (1<<PORTB1) | (1<<PORTB2)| (1<<PORTB5);                               //pines pwm como salida
+ 3b4:	86 e2       	ldi	r24, 0x26	; 38
+ 3b6:	84 b9       	out	0x04, r24	; 4
+	TCCR1A = (1<<COM1A0) | (1<<COM1A1) | (1<<COM1B0) | (1<<COM1B1) | (1<<WGM10); //pwm no invertido en PB1 y PB2
+ 3b8:	81 ef       	ldi	r24, 0xF1	; 241
+ 3ba:	80 93 80 00 	sts	0x0080, r24	; 0x800080 <__TEXT_REGION_LENGTH__+0x7f8080>
+	TCCR1B = (1<<CS10)| (1<<CS12) | (1<<WGM12);                                  //Modos fast pwm 8-bits con prescaler 1024
+ 3be:	8d e0       	ldi	r24, 0x0D	; 13
+ 3c0:	80 93 81 00 	sts	0x0081, r24	; 0x800081 <__TEXT_REGION_LENGTH__+0x7f8081>
+	
+	TCCR0A = (1<<WGM01);            //Modo CTC timer 0
+ 3c4:	82 e0       	ldi	r24, 0x02	; 2
+ 3c6:	84 bd       	out	0x24, r24	; 36
+	TCCR0B = (1<<CS02) | (1<<CS00); //prescaler 1024
+ 3c8:	85 e0       	ldi	r24, 0x05	; 5
+ 3ca:	85 bd       	out	0x25, r24	; 37
+	
+	DIDR0 = (1<<ADC3D); //make ADC3 pin an input analog pin
+ 3cc:	88 e0       	ldi	r24, 0x08	; 8
+ 3ce:	80 93 7e 00 	sts	0x007E, r24	; 0x80007e <__TEXT_REGION_LENGTH__+0x7f807e>
+	ADCSRA= 0x87;//make ADC enable and select ck/128
+ 3d2:	87 e8       	ldi	r24, 0x87	; 135
+ 3d4:	80 93 7a 00 	sts	0x007A, r24	; 0x80007a <__TEXT_REGION_LENGTH__+0x7f807a>
+	ADMUX= (1 << ADLAR) | (1 << MUX1) | (1 << MUX0);// Vref=AVCC, left-justified, ADC3 pin
+ 3d8:	83 e2       	ldi	r24, 0x23	; 35
+ 3da:	80 93 7c 00 	sts	0x007C, r24	; 0x80007c <__TEXT_REGION_LENGTH__+0x7f807c>
+ 3de:	08 95       	ret
+
+000003e0 <_exit>:
+ 3e0:	f8 94       	cli
+
+000003e2 <__stop_program>:
+ 3e2:	ff cf       	rjmp	.-2      	; 0x3e2 <__stop_program>

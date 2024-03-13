@@ -1,0 +1,30 @@
+.data
+arreglo: .word 1,-2,3,4,-5,6,-7,8,9,10
+CONTROL: .word32 0x10000
+DATA: .word32 0x10008
+.code
+lwu $s6, CONTROL($0)
+lwu $s7, DATA($0)
+daddi $a0, $0, arreglo
+daddi $a1, $0, 10
+daddi $sp, $0 , 0x400
+jal RECORRER
+halt
+
+RECORRER: daddi $sp, $sp, -8
+sd $ra, 0($sp)
+loop: jal LEER_NUM
+daddi $a1, $a1, -1
+daddi $a0, $a0, 8
+bnez $a1, loop
+ld $ra, 0($sp)
+daddi $sp, $sp, 8
+jr $ra
+
+LEER_NUM: ld $t0, 0($a0)
+slt $t1, $0, $t0
+bnez $t1, espositivo
+daddi $t2, $0, 2
+sd $t0, 0($s7)
+sd $t2, 0($s6)
+espositivo: jr $ra

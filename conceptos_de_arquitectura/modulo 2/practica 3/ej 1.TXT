@@ -1,0 +1,30 @@
+.data 
+texto: .asciiz "?"  ; El mensaje a mostrar 
+termino: .asciiz "/"
+CONTROL: .word32 0x10000 
+DATA: .word32 0x10008    
+
+.text  
+lwu $s0, DATA(r0) ; $s0 = dirección de DATA  
+lwu $s1, CONTROL(r0) ; $s1 = dirección de CONTROL  
+daddi $a0, $zero , texto ; Paso valor de dirc de memoria para texto
+jal leer
+daddi $t0, $0, texto ; $t0 = dirección del mensaje a mostrar  
+sd $t0, 0($s0)
+daddi $t0, $0, 6 ; $t0 = 6 -> función 6: limpiar pantalla alfanumérica  
+sd $t0, 0($s1) ; CONTROL recibe 6 y limpia la pantalla 
+
+daddi $t0, $0, 4 ; $t0 = 4 -> función 4: salida de una cadena ASCII  
+sd $t0, 0($s1) ; CONTROL recibe 4 y produce la salida del mensaje  
+halt
+
+leer:	lbu	$t1, termino($zero)
+loop:	daddi	$t0, $zero, 9
+sd	$t0, 0($s1) 	; CONTROL=9 para escritura de ascii
+lbu	$t0, 0($s0) 	; cargo en t0 lo que esta en DATA
+sb	$t0, 0($a0) 	; guardo lo de t0 a mi variable texto
+daddi	$a0, $a0, 1 	; aumento en 1 texto
+bne	$t0, $t1, loop 	; comparo con "/" y en caso de no ser iguales sigo leyendo
+daddi	$a0, $a0, -1
+sb	$zero, 0($a0) ; pongo el 0 en texto
+jr	$ra

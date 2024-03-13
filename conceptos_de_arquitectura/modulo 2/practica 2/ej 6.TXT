@@ -1,0 +1,9 @@
+a) El programa hace la mutiplicacion de un numero (valor1) por si mismo (potencia) x (valor2) cantidad de veces.
+El programa tiene en $a0 y $a1 tiene los datos a mandar a la subrutina (valor 1 y valor 2), en $v0 se devuelve el resultado de la potencia del numero y en $t1 se almacena 
+temporalmente si se debe seguir multiplicando el numero.
+b) jal se utiliza para saltar a la subrutina y jr para retornar al programa principal
+c) en $ra se almacena la direccion donde debe seguir ejecutando en el programa principal. En $a0 y $a1 tiene los datos a mandar a la subrutina y en el  $v0 se devuelve el 
+resultado.
+d) Si a_la_potencia necesita invocar otra subrutina para realizar la multiplicacion ocurriria que se sobreescribiria el registro de retorno $ra, esto se solucionaria a 
+traves de utilizar una pila para guardar la direccion de retorno de dicha subrutina. La forma de saber a que direccion de memoria deben retornar es ya que recibe la 
+direccion de retorno esta en el registro $ra.

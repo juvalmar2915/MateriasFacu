@@ -1,0 +1,4 @@
+[1010/161610.587:ERROR:settings.cc(430)] Settings version is not 5
+[1010/162610.591:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\valen\AppData\Local\Microsoft\Edge\User Data\Crashpad\attachments\eb2a8ccf-bf85-41de-9b0b-d0c8da1fb977: El sistema no puede encontrar la ruta especificada. (0x3)
+[1010/162610.592:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1011/172330.923:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)

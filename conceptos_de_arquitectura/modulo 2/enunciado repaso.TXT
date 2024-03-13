@@ -1,0 +1,6 @@
+Escribir un programa para WINMIPS que requiere la implementación de dos subrutinas. 
+La primera llamada RECORRER se encarga de avanzar en un arreglo de 10 números enteros 
+y en cada iteración llama a una segunda subrutina llamada LEER_NUM. 
+El arreglo se encuentra disponible en memoria. 
+La subrutina LEER_NUM se encarga de analizar si cada número es positivo o negativo, 
+si es negativo debe imprimirlo en pantalla.

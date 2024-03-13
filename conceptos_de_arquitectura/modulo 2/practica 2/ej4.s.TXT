@@ -1,0 +1,32 @@
+.data
+peso: .double 75.7
+estatura: .double 1.73
+IMC: .double 0.0
+Infrapeso: .double 18.5
+Normal: .double 25.0
+SobreyObe: .double 30.0
+estado: .word 0
+.code
+l.d f1, peso(r0)
+l.d f2, estatura(r0)
+l.d f4, Infrapeso(r0)
+l.d f5, Normal(r0)
+l.d f6, SobreyObe(r0)
+mul.d f2, f2, f2
+div.d f3, f1, f2
+c.lt.d f3, f4
+bc1f noesinfrapeso
+daddi r1, r0, 1
+j fin
+noesinfrapeso: c.lt.d f3, f5
+bc1f noesnormal
+daddi r1, r0, 2
+j fin
+noesnormal: c.lt.d f3, f6
+bc1f noessobrepeso
+daddi r1, r0, 3
+j fin
+noessobrepeso: daddi r1, r0, 4
+fin: s.d f3, IMC(r0)
+sd r1, estado(r0)
+halt

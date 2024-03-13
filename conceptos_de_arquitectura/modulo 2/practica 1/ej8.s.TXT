@@ -1,0 +1,15 @@
+.data
+num1: .word 6
+num2: .word 4
+resul: .word 0
+.code
+ld r1, num1(r0)
+beqz r1, fin
+dadd r3, r0, r1
+ld r2, num2(r0)
+loop: beqz r2, fin
+dadd r1, r1, r3 ; num1=num1+num1(primer valor)
+j loop
+daddi r2, r2, -1 ; num2=num2-1
+fin: sd r1, resul(r0)
+halt

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="11"/>
+    <BuildModes Active="Default"/>
+    <Units Count="1">
+      <Unit0>
+        <Filename Value="ej2.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="24" Y="18"/>
+        <UsageCount Value="21"/>
+        <Loaded Value="True"/>
+      </Unit0>
+    </Units>
+    <JumpHistory Count="5" HistoryIndex="4">
+      <Position1>
+        <Filename Value="ej2.lpr"/>
+        <Caret Line="25" Column="44"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ej2.lpr"/>
+        <Caret Line="8" Column="16"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ej2.lpr"/>
+        <Caret Line="16" Column="13"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ej2.lpr"/>
+        <Caret Line="5" Column="3"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ej2.lpr"/>
+        <Caret Line="3" Column="7"/>
+      </Position5>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode=""/>
+    </RunParams>
+  </ProjectSession>
+</CONFIG>

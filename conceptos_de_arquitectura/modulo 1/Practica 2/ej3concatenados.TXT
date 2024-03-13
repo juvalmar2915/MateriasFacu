@@ -1,0 +1,26 @@
+ORG 1000H
+INICIO DB 41H ; Carácter “A” en ASCII
+ORG 3000H ; Precondición: BX = OFFSET INICIO
+BUILD: PUSH AX
+PUSH BX
+MOV AL, INICIO ; Carácter a guardar
+MOV AH, 26 ; Letras en el abecedario
+LOOP: INC BX ; Siguiente dirección
+ADD AL, 20H ; Conversión a minúscula
+MOV [BX], AL ; Guardo en memoria
+DEC AH ; Letras restantes
+JZ FIN
+INC BX ; Siguiente dirección
+SUB AL, 1FH ; Siguiente letra mayúscula
+MOV [BX], AL ; Guardo en memoria
+JMP LOOP
+FIN: POP BX
+POP AX
+RET
+ORG 2000H
+MOV AL, 52
+MOV BX, OFFSET INICIO
+CALL BUILD
+INT 7
+INT 0
+END

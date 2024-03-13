@@ -1,0 +1,5 @@
+un server lo crearia /var ext 4 sdc6 (6 indica particion logica las primarias van de 1 al 4 una de estas pueden ser extendidas a partir del 5 indica logica)
+hda y sda diferencia? hda hace referencia a controladores ide mientras que sda hace referencia a controladores sata
+hdc3 (hdc3 sería la 3era particion del master del 2do bus ya que hda/hdb es el del primer bus y hdc/d es del segundo) es primaria o extendida
+en /dev visualizo donde se encuentran estos discos
+archivos de configuracion se encuentran en /etc

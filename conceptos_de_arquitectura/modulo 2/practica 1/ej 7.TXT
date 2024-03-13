@@ -1,0 +1,20 @@
+.data
+TABLA: .word 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+X: .word 4
+CANT: .word 0
+RES: .word 0
+.code
+ld r1, X(r0)
+dadd r2, r0, r0 ; muevo en tabla
+dadd r3, r0, r0 ; cantidad
+daddi r6, r0, 10 ; veces en loop
+loop: ld r4, TABLA(r2)
+daddi r6, r6, -1
+slt r5, r1, r4
+beqz r5, noincremento
+daddi r3, r3, 1
+noincremento: sd r5, RES(r2)
+daddi r2, r2, 8
+bnez r6, loop
+sd r3, CANT(r0)
+halt
